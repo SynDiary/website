@@ -1,0 +1,184 @@
+/*
+Template Name: Softek | Software and App Landing Website Template
+Author: Pillarix
+Author URI: https://wrapbootstrap.com/user/pillarix
+Version: 1.0
+*/
+/*
+-- Body
+-- Custom Classes 
+-- Navbar
+-- Sidebar Logo
+-- Homepage
+-- Menu
+-- About
+-- Contact
+-- Mobile Media
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Body */
+body{
+    font-family: 'Manrope', sans-serif;
+}
+.osahan-header-logo .logo {
+	height: 30px;
+}
+.elements-top-header  a.nav-link {
+	padding-top: 36px !important;
+	padding-bottom: 36px !important;
+	color: #ffffff !important;
+}
+
+
+
+.nav-underline .nav-link {
+	border: none;
+	background: no-repeat;
+	color: #7634da;
+	border-radius: 50px;
+	padding: 10px 24px;
+}
+
+.nav-underline .nav-link.active {
+    background: #f1e9ff;
+}
+
+
+
+a{
+	text-decoration: none;
+	color: #e14a00;
+}
+.text-purple{
+	color: #f14f00 !important;
+}
+.btn-theme {
+	padding: 10px 25px !important;
+}
+.btn-purple{
+	background-color: #f14f00;
+	color: #ffffff;
+	border: 1px solid #f14f00;
+}
+.btn-purple:hover, .btn-purple:focus, .btn-outline-purple:hover {
+	background-color: #e14a00;
+	color: #ffffff;
+	border: 1px solid #e14a00;
+}
+.btn-outline-purple{
+	color: #e14a00;
+	border: 1px solid #e14a00;
+}
+.nav-pills.purple-tab .nav-link.active, .nav-pills.purple-tab .show>.nav-link {
+	background-color: #f14f00;
+}
+.bg-purple{
+	background-color: #f14f00;
+}
+.purple-tab .nav-link {
+	color: #f14f00;
+}
+.border-primary {
+	border-color: #f14f00 !important;
+}
+.form-check-input:checked {
+	background-color: #f14f00;
+	border-color: #f14f00;
+}
+.breadcrumb.bg-dark .breadcrumb-item+.breadcrumb-item::before {
+	color: rgb(204 204 204 / 23%);
+}
+.bg-opacity-purple {
+	background: rgb(139 61 255 / 8%);
+}
+
+
+
+.osahan-main-nav.fixed-top {
+	background-color: #000000 !important;
+}
+
+.avatar-image-sm {
+	height: 50px;
+	width: 50px;
+	object-fit: cover;
+}
+
+.footer-icon {
+	min-width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+ul.iconlist, .icons ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.iconlist li, .icons li {display: inline-block;width: 99px;background: #f3f3f3;text-align: center;vertical-align: middle;height: 92px;margin: 0 2px 5px 0;padding: 5px 5px;}
+
+.icon-holder span {
+	font-size: 11px;
+	color: #666;
+	margin: 0px;
+}
+
+.icon-holder .icon {
+	font-size: 36px;
+	margin: 6px 0;
+}
+
+.icon-holder {
+	line-height: 12px;
+}
+
+.class-icon p {
+	font-size: 11px;
+    color: #666;
+    margin: 0px;
+    line-height: 13px;
+}
+
+.class-icon i {
+	font-size: 36px;
+	margin: 6px 0;
+}
+
+
+
+
+
+
+/* About */
+.bg-elements {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../img/pages/banner.jpeg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+/* Mobile Media  */
+@media (max-width:992px) {
+	.m-none {
+		display: none;
+	}
+
+
+}
+@media (min-width:1280px) {
+	.position-lg-relative {
+		position: relative;
+	}
+    .position-lg-absolute {
+		position: absolute;
+	}
+
+}
