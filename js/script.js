@@ -1,10 +1,4 @@
 /*
-Template Name: Softek | Software and App Landing Website Template
-Author: Pillarix
-Author URI: https://wrapbootstrap.com/user/pillarix
-Version: 1.0
-*/
-/*
 -- Page Loading
 -- Count Down Date
 -- Back To Top
@@ -28,40 +22,29 @@ Version: 1.0
             removePreloader();
         }
     });
-    
-    // Count Down Date
-    document.addEventListener("DOMContentLoaded", function() {
-        var daysElement = document.getElementById("days");
-        var hoursElement = document.getElementById("hours");
-        var minutesElement = document.getElementById("minutes");
-        var secondsElement = document.getElementById("seconds");
-        var countdownElement = document.getElementById("countdown");
-    
-        if (!daysElement || !hoursElement || !minutesElement || !secondsElement || !countdownElement) {
-            return;
-        }
-    
-        var countDownDate = new Date("Jan 1, 2025 00:00:00").getTime();
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-            daysElement.innerHTML = days;
-            hoursElement.innerHTML = hours;
-            minutesElement.innerHTML = minutes;
-            secondsElement.innerHTML = seconds;
-    
-            if (distance < 0) {
-                clearInterval(x);
-                countdownElement.innerHTML = "EXPIRED";
-            }
-        }, 1000);
-    });
 
+    // Index Demo Page Scrolling
+    window.addEventListener('DOMContentLoaded', event => {
+        const mainNav = document.body.querySelector('#mainNav');
+        if (mainNav) {
+            new bootstrap.ScrollSpy(document.body, {
+                target: '#mainNav',
+                rootMargin: '0px 0px',
+            });
+        };
+        const navbarToggler = document.body.querySelector('.navbar-toggler');
+        const responsiveNavItems = [].slice.call(
+            document.querySelectorAll('#navbarResponsive .nav-link')
+        );
+        responsiveNavItems.map(function(responsiveNavItem) {
+            responsiveNavItem.addEventListener('click', () => {
+                if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                    navbarToggler.click();
+                }
+            });
+        });
+    });    
+    
     // Back To Top
     var backButton = document.createElement("button");
     backButton.id = "back-to-top";
@@ -86,34 +69,5 @@ Version: 1.0
     // AOS Animation
     AOS.init();
     AOS.refresh();
-
-    // Quantity Button
-    document.addEventListener('DOMContentLoaded', function() {
-        const productRows = document.querySelectorAll('.product-row');
-        productRows.forEach(function(row) {
-            const quantityInput = row.querySelector('.quantity-input');
-            const decrementBtn = row.querySelector('.decrement-btn');
-            const incrementBtn = row.querySelector('.increment-btn');
-            decrementBtn.addEventListener('click', function() {
-                decrementQuantity(quantityInput);
-            });
-            incrementBtn.addEventListener('click', function() {
-                incrementQuantity(quantityInput);
-            });
-        });
-
-        function decrementQuantity(input) {
-            let currentQuantity = parseInt(input.value, 10);
-            if (currentQuantity > 1) {
-                input.value = currentQuantity - 1;
-            }
-        }
-
-        function incrementQuantity(input) {
-            let currentQuantity = parseInt(input.value, 10);
-            input.value = currentQuantity + 1;
-        }
-    });
-
 
 })(window.jQuery);
