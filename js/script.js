@@ -21,6 +21,9 @@
             }
             removePreloader();
         }
+
+        // Setup form submissions
+        setupFormSubmissions();
     });
 
     // Index Demo Page Scrolling
@@ -69,5 +72,40 @@
     // AOS Animation
     AOS.init();
     AOS.refresh();
+
+    // Form Submissions
+    function setupFormSubmissions() {
+        const signupForm = document.getElementById('signup-form');
+        const contactForm = document.getElementById('contact-form');
+
+        if (signupForm) {
+            signupForm.addEventListener('submit', handleSubmit);
+        }
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', handleSubmit);
+        }
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const formData = new FormData(form);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+        .then(() => {
+            alert("Thank you for your submission!");
+            form.reset(); // Reset the form after successful submission
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert("An error occurred. Please try again later.");
+        });
+    }     
 
 })(window.jQuery);

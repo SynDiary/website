@@ -111,6 +111,10 @@ a:hover {
 }
 
 /* Navbar */
+#signup-form input.form-control {
+	box-shadow: none !important;
+}
+
 .app-nav  a.nav-link.py-4 {
 	padding-top: 35px !important;
 	padding-bottom: 35px !important;

@@ -62,7 +62,7 @@
                                 <span class="gradient-text fw-bold"> Your Personal Data Hub</span>
                             </div>
                             <p class="text-muted pb-3 lead">Take control of your digital life. Consolidate your scattered data from social media, health apps, and more into a secure, personal hub. Unlock personal insights with AI-powered analysis, all while keeping your data private and safe.</p>
-                            <form name="signup" method="POST" data-netlify="true" netlify-honeypot="purpose">
+                            <form name="signup" method="POST" data-netlify="true" netlify-honeypot="purpose" id="signup-form">
                                 <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
                                     <input name="purpose" type="text" class="form-control border-0 py-3 px-4 visually-hidden">
                                     <input name="email" type="text" class="form-control border-0 py-3 px-4" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="app">
@@ -328,7 +328,7 @@
         <div class="bg-white" id="contact">
 
             <!-- Contact Form -->
-            <div class="container py-5" id="contact-form">
+            <div class="container py-5">
                 <div class="row justify-content-center mb-5">
                     <div class="col-xl-5 col-lg-7 col-md-8 col-sm-10 col-12">
                         <div class="text-center">
@@ -336,7 +336,7 @@
                         </div>
                     </div>
                 </div>
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="nectar" data-netlify-recaptcha="true">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="nectar" data-netlify-recaptcha="true" id="contact-form">
                     <div class="mb-3 input-group border border-2 border-dark rounded-pill overflow-hidden bg-white">
                         <input type="text" name="name" class="form-control border-0 py-3 px-4" id="name" placeholder="Your Name">
                     </div>
