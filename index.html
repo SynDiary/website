@@ -62,9 +62,10 @@
                                 <span class="gradient-text fw-bold"> Your Personal Data Hub</span>
                             </div>
                             <p class="text-muted pb-3 lead">Take control of your digital life. Consolidate your scattered data from social media, health apps, and more into a secure, personal hub. Unlock personal insights with AI-powered analysis, all while keeping your data private and safe.</p>
-                            <form>
+                            <form name="signup" method="POST" data-netlify="true" netlify-honeypot="purpose">
                                 <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
-                                    <input type="text" class="form-control border-0 py-3 px-4" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="app">
+                                    <input name="purpose" type="text" class="form-control border-0 py-3 px-4 visually-hidden">
+                                    <input name="email" type="text" class="form-control border-0 py-3 px-4" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="app">
                                     <button class="btn btn-primary fw-semibold rounded-pill py-3 px-5" type="button" id="app">Sign up</button>
                                 </div>
                             </form>
@@ -335,16 +336,20 @@
                         </div>
                     </div>
                 </div>
-                <form>
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="nectar" data-netlify-recaptcha="true">
                     <div class="mb-3 input-group border border-2 border-dark rounded-pill overflow-hidden bg-white">
                         <input type="text" class="form-control border-0 py-3 px-4" id="name" placeholder="Your Name">
                     </div>
                     <div class="mb-3 input-group border border-2 border-dark rounded-pill overflow-hidden bg-white">
                         <input type="email" class="form-control border-0 py-3 px-4" id="email" placeholder="Your Email">
                     </div>
+                    <div class="mb-3 input-group border border-2 border-dark rounded-pill overflow-hidden bg-white visually-hidden">
+                        <input name="nectar" />
+                    </div>                    
                     <div class="mb-3 input-group border border-2 border-dark rounded-5 overflow-hidden bg-white">
                         <textarea class="form-control border-0 py-3 px-4" id="message" rows="3" placeholder="Your Message"></textarea>
                     </div>
+                    <div class="mb-3 input-group border border-2 border-dark roverflow-hidden bg-white" data-netlify-recaptcha="true"></div>
                     <button type="submit" class="btn btn-primary rounded-5">Submit</button>
                 </form>
             </div>
