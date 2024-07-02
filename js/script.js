@@ -66,7 +66,7 @@ Version: 1.0
     var backButton = document.createElement("button");
     backButton.id = "back-to-top";
     backButton.title = "Go to top";
-    backButton.textContent = "\u2191";
+    backButton.textContent = "\u25B2";
     document.body.appendChild(backButton);
     window.onscroll = function() {
         scrollFunction();

@@ -1,10 +1,4 @@
 /*
-Template Name: Softek | Software and App Landing Website Template
-Author: Pillarix
-Author URI: https://wrapbootstrap.com/user/pillarix
-Version: 1.0
-*/
-/*
 -- Body
 -- Custom Bootstrap
 -- Index
@@ -109,6 +103,11 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.site-brand img {
+	width: 144px; /* Adjust the width as needed */
+	height: auto; /* Keeps the aspect ratio intact */
 }
 
 /* Navbar */
@@ -316,4 +315,3 @@ a:hover {
 		transform: none;
 	}
 }
-    
