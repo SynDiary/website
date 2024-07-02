@@ -110,11 +110,18 @@ a:hover {
 	height: auto; /* Keeps the aspect ratio intact */
 }
 
-/* Navbar */
-#signup-form input.form-control {
-	box-shadow: none !important;
+#signup-form input.form-control:focus,
+#signup-form input.form-control:-webkit-autofill,
+#signup-form input.form-control:-webkit-autofill:focus,
+#signup-form input.form-control:-webkit-autofill:hover, 
+#signup-form input.form-control:-webkit-autofill:active {
+	-webkit-text-fill-color: #000 !important;
+    -webkit-box-shadow: 0 0 0 0 #ffffff inset !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
+
+/* Navbar */
 .app-nav  a.nav-link.py-4 {
 	padding-top: 35px !important;
 	padding-bottom: 35px !important;

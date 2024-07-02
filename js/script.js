@@ -99,13 +99,17 @@
             body: new URLSearchParams(formData).toString(),
         })
         .then(() => {
-            alert("Thank you for your submission!");
+            showModal('successModal');
             form.reset(); // Reset the form after successful submission
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert("An error occurred. Please try again later.");
+            showModal('errorModal');
         });
-    }     
+    }
 
+    function showModal(modalId) {
+        const modal = new bootstrap.Modal(document.getElementById(modalId));
+        modal.show();
+    }
 })(window.jQuery);
