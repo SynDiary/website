@@ -463,20 +463,20 @@
                         <form name="alpha-testing-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="alpha-signup-form">
                             <!-- Honeypot -->
                             <input name="bot-field" type="text" class="visually-hidden">
+
+                            <!-- Email (Required) -->
+                            <div class="mb-3">
+                                <label for="alpha-email" class="form-label small fw-semibold">Email address of your Google account (for Android) or Apple ID (for iOS) <span class="text-danger">*</span></label>
+                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
+                                    <input name="email" type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="alpha-email" class="form-control border-0 py-3 px-4" placeholder="your.email@example.com" required>
+                                </div>
+                            </div>                            
                             
                             <!-- Name (Optional) -->
                             <div class="mb-3">
                                 <label for="alpha-name" class="form-label small fw-semibold">Name (optional)</label>
                                 <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
                                     <input name="name" type="text" id="alpha-name" class="form-control border-0 py-3 px-4" placeholder="Your name">
-                                </div>
-                            </div>
-
-                            <!-- Email (Required) -->
-                            <div class="mb-3">
-                                <label for="alpha-email" class="form-label small fw-semibold">Google account (for Android) or Apple ID (for iOS) <span class="text-danger">*</span></label>
-                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
-                                    <input name="email" type="email" id="alpha-email" class="form-control border-0 py-3 px-4" placeholder="your.email@example.com" required>
                                 </div>
                             </div>
 
