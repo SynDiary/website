@@ -77,13 +77,11 @@
                                 <span class="gradient-text fw-bold"> Your Personal Data Hub</span>
                             </div>
                             <p class="text-muted pb-3 lead">Take control of your digital life. Consolidate your scattered data from social media, health apps, and more into a secure, personal hub. Unlock personal insights with AI-powered analysis, all while keeping your data private and safe.</p>
-                            <form name="signup" method="POST" data-netlify="true" netlify-honeypot="purpose" id="signup-form">
-                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
-                                    <input name="purpose" type="text" class="form-control border-0 py-3 px-4 visually-hidden">
-                                    <input name="email" type="text" class="form-control border-0 py-3 px-4" placeholder="Enter your email" aria-label="Enter your email" required>
-                                    <button type="submit" class="btn btn-primary fw-semibold rounded-pill py-3 px-5">Sign up</button>
-                                </div>
-                            </form>
+                            
+                            <!-- CTA Button -->
+                            <button type="button" class="btn btn-primary btn-lg fw-semibold rounded-pill py-3 px-5" data-bs-toggle="modal" data-bs-target="#alphaSignupModal">
+                                Join Alpha Testing
+                            </button>
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">
@@ -445,7 +443,116 @@
                 </div>
             </div>
             </div>
-        </div>        
+        </div>
+
+        <!-- Alpha Signup Modal -->
+        <div class="modal fade" id="alphaSignupModal" tabindex="-1" aria-labelledby="alphaSignupModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h4 class="modal-title fw-bold" id="alphaSignupModalLabel">Join Our Alpha Testing</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body pt-3">
+                        <!-- Platform Instructions -->
+                        <div class="platform-instructions mb-4 p-3 bg-light rounded-4">
+                            <p class="mb-2 small"><strong><i class="ri-android-fill text-success"></i> Android:</strong> If you install from Play Store, please use the Google account you listed here (Gmail or other). If you don't have a Google account, create one or we'll send an APK instruction later.</p>
+                            <p class="mb-0 small"><strong><i class="ri-app-store-fill text-primary"></i> iOS:</strong> You'll need TestFlight app + an Apple ID (the email you provided).</p>
+                        </div>
+
+                        <form name="alpha-testing-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="alpha-signup-form">
+                            <!-- Honeypot -->
+                            <input name="bot-field" type="text" class="visually-hidden">
+                            
+                            <!-- Name (Optional) -->
+                            <div class="mb-3">
+                                <label for="alpha-name" class="form-label small fw-semibold">Name (optional)</label>
+                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
+                                    <input name="name" type="text" id="alpha-name" class="form-control border-0 py-3 px-4" placeholder="Your name">
+                                </div>
+                            </div>
+
+                            <!-- Email (Required) -->
+                            <div class="mb-3">
+                                <label for="alpha-email" class="form-label small fw-semibold">Google account (for Android) or Apple ID (for iOS) <span class="text-danger">*</span></label>
+                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
+                                    <input name="email" type="email" id="alpha-email" class="form-control border-0 py-3 px-4" placeholder="your.email@example.com" required>
+                                </div>
+                            </div>
+
+                            <!-- Platform -->
+                            <div class="mb-3">
+                                <label for="platform" class="form-label small fw-semibold">Platform(s) <span class="text-danger">*</span></label>
+                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
+                                    <select name="platform" id="platform" class="form-select border-0 py-3 px-4" required>
+                                        <option value="">Select platform...</option>
+                                        <option value="android">Android</option>
+                                        <option value="ios">iOS</option>
+                                        <option value="both">Both</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Device Model + OS Version -->
+                            <div class="mb-3">
+                                <label for="device-info" class="form-label small fw-semibold">Device model(s) + OS version(s) <span class="text-danger">*</span></label>
+                                <div class="input-group border border-2 border-dark rounded-5 overflow-hidden bg-white p-1">
+                                    <textarea name="device-info" id="device-info" class="form-control border-0 py-3 px-4" rows="2" placeholder="e.g., Pixel 4 / Android 13, iPhone 12 / iOS 16" required></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Play Store Signed In -->
+                            <div class="mb-3">
+                                <label for="play-store-signed-in" class="form-label small fw-semibold">Are you signed into Play Store with the Google account above?</label>
+                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
+                                    <select name="play-store-signed-in" id="play-store-signed-in" class="form-select border-0 py-3 px-4">
+                                        <option value="">Select...</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                        <option value="na">N/A (iOS only)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Crash Logs Consent -->
+                            <div class="mb-3">
+                                <label for="crash-logs-consent" class="form-label small fw-semibold">Comfortable sharing crash logs/screenshots?</label>
+                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
+                                    <select name="crash-logs-consent" id="crash-logs-consent" class="form-select border-0 py-3 px-4">
+                                        <option value="">Select...</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Timezone / Availability -->
+                            <div class="mb-3">
+                                <label for="timezone-availability" class="form-label small fw-semibold">Timezone / availability (optional)</label>
+                                <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
+                                    <input name="timezone-availability" type="text" id="timezone-availability" class="form-control border-0 py-3 px-4" placeholder="e.g., EST, evenings preferred">
+                                </div>
+                            </div>
+
+                            <!-- Alpha Consent Checkbox -->
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="alpha-consent" id="alpha-consent" required>
+                                    <label class="form-check-label small" for="alpha-consent">
+                                        I agree this is an alpha test and my feedback may be used to improve the app. <span class="text-danger">*</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg fw-semibold rounded-pill py-3">Submit Application</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
      
         <!-- Bootsrap Bundle Js -->
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
