@@ -77,7 +77,7 @@
     function setupFormSubmissions() {
         const signupForm = document.getElementById('signup-form');
         const contactForm = document.getElementById('contact-form');
-        const betaSignupForm = document.getElementById('beta-signup-form');
+        const alphaSignupForm = document.getElementById('alpha-signup-form');
 
         if (signupForm) {
             signupForm.addEventListener('submit', handleSubmit);
@@ -87,12 +87,12 @@
             contactForm.addEventListener('submit', handleSubmit);
         }
 
-        if (betaSignupForm) {
-            betaSignupForm.addEventListener('submit', handleBetaSubmit);
+        if (alphaSignupForm) {
+            alphaSignupForm.addEventListener('submit', handleAlphaSubmit);
         }
     }
 
-    function handleBetaSubmit(event) {
+    function handleAlphaSubmit(event) {
         event.preventDefault();
 
         const form = event.target;
@@ -105,7 +105,7 @@
         })
         .then(() => {
             // Close the modal
-            const modal = bootstrap.Modal.getInstance(document.getElementById('betaSignupModal'));
+            const modal = bootstrap.Modal.getInstance(document.getElementById('alphaSignupModal'));
             if (modal) {
                 modal.hide();
             }
@@ -119,13 +119,13 @@
         });
     }
 
-    // Support opening beta modal via URL hash (#join-beta)
+    // Support opening alpha modal via URL hash (#join-alpha)
     window.addEventListener('DOMContentLoaded', function() {
         const hash = window.location.hash;
-        if (hash === '#join-beta') {
-            const betaModal = document.getElementById('betaSignupModal');
-            if (betaModal) {
-                const modal = new bootstrap.Modal(betaModal);
+        if (hash === '#join-alpha') {
+            const alphaModal = document.getElementById('alphaSignupModal');
+            if (alphaModal) {
+                const modal = new bootstrap.Modal(alphaModal);
                 modal.show();
             }
         }

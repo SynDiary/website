@@ -79,7 +79,7 @@
                             <p class="text-muted pb-3 lead">Take control of your digital life. Consolidate your scattered data from social media, health apps, and more into a secure, personal hub. Unlock personal insights with AI-powered analysis, all while keeping your data private and safe.</p>
                             
                             <!-- CTA Button -->
-                            <button type="button" class="btn btn-primary btn-lg fw-semibold rounded-pill py-3 px-5" data-bs-toggle="modal" data-bs-target="#betaSignupModal">
+                            <button type="button" class="btn btn-primary btn-lg fw-semibold rounded-pill py-3 px-5" data-bs-toggle="modal" data-bs-target="#alphaSignupModal">
                                 Join Alpha Testing
                             </button>
                         </div>
@@ -445,12 +445,12 @@
             </div>
         </div>
 
-        <!-- Beta Signup Modal -->
-        <div class="modal fade" id="betaSignupModal" tabindex="-1" aria-labelledby="betaSignupModalLabel" aria-hidden="true">
+        <!-- Alpha Signup Modal -->
+        <div class="modal fade" id="alphaSignupModal" tabindex="-1" aria-labelledby="alphaSignupModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 pb-0">
-                        <h4 class="modal-title fw-bold" id="betaSignupModalLabel">Join Our Alpha Testing</h4>
+                        <h4 class="modal-title fw-bold" id="alphaSignupModalLabel">Join Our Alpha Testing</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body pt-3">
@@ -460,23 +460,23 @@
                             <p class="mb-0 small"><strong><i class="ri-app-store-fill text-primary"></i> iOS:</strong> You'll need TestFlight app + an Apple ID (the email you provided).</p>
                         </div>
 
-                        <form name="alpha-testing-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="beta-signup-form">
+                        <form name="alpha-testing-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="alpha-signup-form">
                             <!-- Honeypot -->
                             <input name="bot-field" type="text" class="visually-hidden">
                             
                             <!-- Name (Optional) -->
                             <div class="mb-3">
-                                <label for="beta-name" class="form-label small fw-semibold">Name (optional)</label>
+                                <label for="alpha-name" class="form-label small fw-semibold">Name (optional)</label>
                                 <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
-                                    <input name="name" type="text" id="beta-name" class="form-control border-0 py-3 px-4" placeholder="Your name">
+                                    <input name="name" type="text" id="alpha-name" class="form-control border-0 py-3 px-4" placeholder="Your name">
                                 </div>
                             </div>
 
                             <!-- Email (Required) -->
                             <div class="mb-3">
-                                <label for="beta-email" class="form-label small fw-semibold">Google account (for Android) or Apple ID (for iOS) <span class="text-danger">*</span></label>
+                                <label for="alpha-email" class="form-label small fw-semibold">Google account (for Android) or Apple ID (for iOS) <span class="text-danger">*</span></label>
                                 <div class="input-group border border-2 border-dark rounded-pill overflow-hidden bg-white p-1">
-                                    <input name="email" type="email" id="beta-email" class="form-control border-0 py-3 px-4" placeholder="your.email@example.com" required>
+                                    <input name="email" type="email" id="alpha-email" class="form-control border-0 py-3 px-4" placeholder="your.email@example.com" required>
                                 </div>
                             </div>
 
@@ -534,12 +534,12 @@
                                 </div>
                             </div>
 
-                            <!-- Beta Consent Checkbox -->
+                            <!-- Alpha Consent Checkbox -->
                             <div class="mb-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="beta-consent" id="beta-consent" required>
-                                    <label class="form-check-label small" for="beta-consent">
-                                        I agree this is a beta and my feedback may be used to improve the app. <span class="text-danger">*</span>
+                                    <input class="form-check-input" type="checkbox" name="alpha-consent" id="alpha-consent" required>
+                                    <label class="form-check-label small" for="alpha-consent">
+                                        I agree this is an alpha test and my feedback may be used to improve the app. <span class="text-danger">*</span>
                                     </label>
                                 </div>
                             </div>
