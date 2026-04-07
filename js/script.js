@@ -156,4 +156,18 @@
         const modal = new bootstrap.Modal(document.getElementById(modalId));
         modal.show();
     }
+
+    // Video Modal – load/unload iframe to control playback
+    const videoModal = document.getElementById('videoModal');
+    if (videoModal) {
+        const videoSrc = 'https://www.youtube.com/embed/P-UdvUCxJYo?autoplay=1';
+        const iframe = document.getElementById('videoIframe');
+
+        videoModal.addEventListener('shown.bs.modal', function () {
+            iframe.src = videoSrc;
+        });
+        videoModal.addEventListener('hidden.bs.modal', function () {
+            iframe.src = '';
+        });
+    }
 })(window.jQuery);

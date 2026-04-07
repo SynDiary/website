@@ -193,6 +193,93 @@ a:hover {
 }
 
 
+/* Video Thumbnail */
+.video-thumbnail {
+	position: relative;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 1rem;
+	aspect-ratio: 16 / 9;
+	margin-top: 5%;
+}
+.video-thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+.video-thumbnail:hover img {
+	transform: scale(1.03);
+}
+.video-thumbnail-overlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.25);
+	transition: background 0.3s ease;
+}
+.video-thumbnail:hover .video-thumbnail-overlay {
+	background: rgba(0, 0, 0, 0.15);
+}
+.video-thumbnail-overlay i {
+	font-size: 5rem;
+	color: rgba(255, 255, 255, 0.9);
+	filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+	transition: transform 0.3s ease;
+}
+.video-thumbnail:hover .video-thumbnail-overlay i {
+	transform: scale(1.1);
+}
+
+/* Store Badges */
+.store-badges {
+	flex-wrap: wrap;
+}
+.store-badge {
+	display: flex;
+	align-items: center;
+}
+.store-badge img {
+	height: 54px;
+	width: auto;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.store-badge-bordered img {
+	border: 1px solid #1b1b1b;
+	border-radius: 7px;
+}
+.store-badge:hover img {
+	transform: translateY(-2px);
+	opacity: 0.85;
+}
+
+/* Video Modal */
+.video-modal-dialog {
+	max-width: fit-content;
+}
+.video-modal-close {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	z-index: 10;
+	opacity: 0.8;
+}
+.video-modal-close:hover {
+	opacity: 1;
+}
+.video-modal-wrapper {
+	aspect-ratio: 9 / 16;
+	max-height: 80vh;
+	width: auto;
+	height: 80vh;
+}
+.video-modal-wrapper iframe {
+	border-radius: 0.5rem;
+}
+
 /* Navbar */
 .app-nav  a.nav-link.py-4 {
 	padding-top: 35px !important;
