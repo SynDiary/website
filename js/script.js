@@ -77,8 +77,6 @@
     function setupFormSubmissions() {
         const signupForm = document.getElementById('signup-form');
         const contactForm = document.getElementById('contact-form');
-        const alphaSignupForm = document.getElementById('alpha-signup-form');
-
         if (signupForm) {
             signupForm.addEventListener('submit', handleSubmit);
         }
@@ -86,50 +84,7 @@
         if (contactForm) {
             contactForm.addEventListener('submit', handleSubmit);
         }
-
-        if (alphaSignupForm) {
-            alphaSignupForm.addEventListener('submit', handleAlphaSubmit);
-        }
     }
-
-    function handleAlphaSubmit(event) {
-        event.preventDefault();
-
-        const form = event.target;
-        const formData = new FormData(form);
-
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString(),
-        })
-        .then(() => {
-            // Close the modal
-            const modal = bootstrap.Modal.getInstance(document.getElementById('alphaSignupModal'));
-            if (modal) {
-                modal.hide();
-            }
-            // Show success message
-            showModal('successModal');
-            form.reset();
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            showModal('errorModal');
-        });
-    }
-
-    // Support opening alpha modal via URL hash (#join-alpha)
-    window.addEventListener('DOMContentLoaded', function() {
-        const hash = window.location.hash;
-        if (hash === '#join-alpha') {
-            const alphaModal = document.getElementById('alphaSignupModal');
-            if (alphaModal) {
-                const modal = new bootstrap.Modal(alphaModal);
-                modal.show();
-            }
-        }
-    });
 
     function handleSubmit(event) {
         event.preventDefault();
