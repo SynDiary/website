@@ -1,0 +1,13 @@
+---
+/*
+ * Light-only lock. Overrides Starlight's ThemeProvider: always render the light
+ * theme and ignore any stored/system preference. Inlined in <head> so it runs
+ * before first paint — no flash. The no-op `updatePickers` stub keeps any
+ * leftover caller (there shouldn't be one, since ThemeSelect is empty) safe.
+ */
+---
+
+<script is:inline>
+  document.documentElement.dataset.theme = 'light';
+  window.StarlightThemeProvider = { updatePickers() {} };
+</script>

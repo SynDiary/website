@@ -1,0 +1,18 @@
+---
+/*
+ * Wrap-don't-fork PageFrame override: renders Starlight's default frame
+ * untouched (header/sidebar/content slots passed through), then appends the
+ * full-width SynDiary site footer after it. This is the sanctioned layout-level
+ * change for a full-bleed footer — the frame's own internals stay Starlight's.
+ */
+import Default from '@astrojs/starlight/components/PageFrame.astro';
+import SiteFooter from './SiteFooter.astro';
+---
+
+<Default {...Astro.props}>
+  <slot name="header" slot="header" />
+  <slot name="sidebar" slot="sidebar" />
+  <slot />
+</Default>
+
+<SiteFooter />

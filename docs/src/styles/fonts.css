@@ -1,0 +1,7 @@
+/*
+ * Self-hosted Sora (variable weight). Bundled from node_modules into /_astro
+ * at build time — no third-party font requests (Google Fonts etc.), matching
+ * SynDiary's privacy posture. The marketing site still loads Sora from a CDN;
+ * the docs site deliberately does not.
+ */
+@import '@fontsource-variable/sora';

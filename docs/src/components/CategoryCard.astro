@@ -1,0 +1,100 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+
+interface Props {
+  href: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+const { href, icon, title, description } = Astro.props;
+---
+
+<div class="sd-card">
+  <span class="sd-card-chip" aria-hidden="true">
+    <Icon name={icon} size="1.5rem" />
+  </span>
+  <h2 class="sd-card-title"><a href={href}>{title}</a></h2>
+  <p class="sd-card-desc">{description}</p>
+</div>
+
+<style>
+  /* Design-system Card: white, radius-xl, shadow-sm, NO border. */
+  .sd-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* single spacing mechanism — no per-child margins */
+    padding: 1.5rem; /* --card-p */
+    background: var(--sl-color-bg); /* white card on the warm band */
+    border-radius: var(--sd-radius-card);
+    box-shadow: var(--sd-shadow-soft);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  /* 50px circular orange chip + white glyph — mirrors the marketing .icon chips. */
+  .sd-card-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--sd-color-brand);
+    color: #fff;
+  }
+
+  .sd-card-title {
+    margin: 0;
+    font-size: 1.25rem; /* --text-h5, the marketing card-title size */
+    font-weight: 700;
+  }
+  .sd-card-title a {
+    color: var(--sd-color-text);
+    text-decoration: none;
+  }
+  /* Stretched link: the whole card is clickable, but the link's accessible name
+     is just the title (description stays outside the link). */
+  .sd-card-title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  .sd-card-desc {
+    margin: 0;
+    color: var(--sd-color-muted); /* marketing secondary — AA on the white card */
+    font-size: var(--sl-text-sm);
+    line-height: 1.5;
+  }
+
+  .sd-card:hover .sd-card-title a {
+    color: var(--sd-color-link);
+  }
+
+  /* Lift (-3px, the design system's --lift) on hover AND keyboard focus.
+     Focus lift is not gated on (hover: hover) so touch-device keyboard users
+     get it too; both respect reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    .sd-card:focus-within {
+      transform: translateY(-3px);
+      box-shadow: 0 0.625rem 2.5rem 0 rgba(47, 47, 47, 0.1); /* --shadow */
+    }
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .sd-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0.625rem 2.5rem 0 rgba(47, 47, 47, 0.1);
+    }
+  }
+
+  /* Outline is the primary keyboard focus affordance. */
+  .sd-card:focus-within {
+    outline: 2px solid var(--sd-color-brand);
+    outline-offset: 3px;
+  }
+  .sd-card-title a:focus-visible {
+    outline: none; /* the card carries the visible focus ring */
+  }
+</style>

@@ -1,0 +1,12 @@
+---
+/*
+ * Suppress Starlight's auto <h1> (from frontmatter title) on splash pages, where
+ * a custom hero provides the page's single <h1>. Regular doc pages are unchanged.
+ * The SEO <title> is unaffected (it comes from the Head component, not here).
+ */
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const isSplash = Astro.locals.starlightRoute.entry.data.template === 'splash';
+---
+
+{!isSplash && <Default />}

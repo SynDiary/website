@@ -1,0 +1,36 @@
+/*
+ * SynDiary brand design tokens — canonical for docs.syndiary.com.
+ *
+ * SOURCE OF TRUTH: the marketing site's visual language in www/css/style.css.
+ * These values are mirrored here as CSS custom properties so the Starlight
+ * docs site (docs/) can consume one shared contract via an @import bridge
+ * (docs/src/styles/tokens.css). If you change a brand color/shape here, keep
+ * it in sync with www/css/style.css (see the sync-checklist in README.md).
+ *
+ * Accessibility note: --sd-color-brand (#f14f00) is ~3.6:1 on white — fine for
+ * large text, buttons, icons, and accents, but BELOW WCAG AA (4.5:1) for
+ * normal-size body text. Use --sd-color-link (#bf3d00) for inline text links:
+ * it clears AA on white (5.4:1), on the warm surface (5.0:1), AND on the pale
+ * accent-low tint used for active nav items (~4.9:1), where #c94000 fell short.
+ */
+:root {
+  /* Brand */
+  --sd-color-brand: #f14f00;        /* primary orange — fills, buttons, icons, large accents */
+  --sd-color-brand-hover: #e14a00;  /* hover/active state for brand fills */
+  --sd-color-link: #bf3d00;         /* darker orange — AA on white, warm surface, and accent-low tint */
+
+  /* Surfaces & text (values from the SynDiary Design System, website language) */
+  --sd-color-surface-warm: #fff5f2; /* warm off-white section background (--surface-tint) */
+  --sd-color-text: #1b1b1b;         /* near-black ink — emphasis/strong/headings (--ink) */
+  --sd-color-muted: #6c757d;        /* marketing secondary text — AA on WHITE only (4.7:1); not for tinted surfaces */
+  --sd-color-prose: #3f3f45;        /* darker neutral for sustained article reading */
+  --sd-color-line: #ebebeb;         /* neutral hairline (--line) */
+  --sd-color-dark: #212529;         /* the single dark block (footer) (--dark) */
+
+  /* Shape */
+  --sd-radius-card: 1rem;                               /* rounded-4 card feel */
+  --sd-shadow-soft: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+  /* Typography */
+  --sd-font-sans: "Sora Variable", "Sora", system-ui, -apple-system, sans-serif;
+}

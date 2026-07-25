@@ -1,0 +1,61 @@
+---
+import CategoryCard from './CategoryCard.astro';
+
+const categories = [
+  { href: '/start-here/', icon: 'rocket', title: 'Start here',
+    description: 'Install the beta, set up your storage, and take your first steps.' },
+  { href: '/using-syndiary/', icon: 'open-book', title: 'Using SynDiary',
+    description: 'Day-to-day guides for working with the app.' },
+  { href: '/managing-your-data/', icon: 'database', title: 'Managing your data',
+    description: 'Export, organize, and back up your data.' },
+  { href: '/privacy-security-permissions/', icon: 'padlock', title: 'Privacy, security & permissions',
+    description: 'What stays private and the permissions SynDiary asks for.' },
+  { href: '/troubleshooting/', icon: 'question-circle', title: 'Troubleshooting & support',
+    description: 'Fixes for common issues and how to get help.' },
+  { href: '/release-notes/', icon: 'star', title: 'Release notes',
+    description: "What's new and changed in SynDiary." },
+];
+---
+
+<div class="sd-band-warm">
+  <div class="sd-band-inner">
+    <ul class="sd-grid" role="list">
+      {categories.map((c) => (
+        <li><CategoryCard {...c} /></li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  /* Full-bleed warm band inside the splash column (echoes the marketing site's
+     alternating white/warm section rhythm). The `html { overflow-x: clip }` rule
+     in brand.css guards this 100vw breakout against scrollbar-width h-scroll. */
+  .sd-band-warm {
+    background: var(--sd-color-surface-warm);
+    margin-inline: calc(50% - 50vw);
+    padding-inline: calc(50vw - 50%);
+    padding-block: 3.5rem;
+  }
+  .sd-band-inner {
+    max-width: 60rem;
+    margin-inline: auto;
+  }
+  .sd-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sd-grid > li {
+    margin: 0;
+  }
+  @media (max-width: 72rem) {
+    .sd-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 44rem) {
+    .sd-grid { grid-template-columns: 1fr; }
+  }
+</style>

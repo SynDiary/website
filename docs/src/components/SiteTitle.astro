@@ -1,0 +1,35 @@
+---
+/*
+ * Header brand: the default SynDiary wordmark logo, plus a small "Help" pill so
+ * the docs read as "SynDiary · Help". Leaf override — the header grid, search,
+ * and responsive behavior stay Starlight's.
+ */
+import Default from '@astrojs/starlight/components/SiteTitle.astro';
+---
+
+<div class="sd-title">
+  <Default />
+  <span class="sd-help-badge" aria-hidden="true">Help</span>
+</div>
+
+<style>
+  .sd-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+  .sd-help-badge {
+    flex-shrink: 0;
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--sd-color-link);
+    background: var(--sd-color-surface-warm);
+    border: 1px solid color-mix(in srgb, var(--sd-color-brand) 30%, transparent);
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+</style>
