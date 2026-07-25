@@ -1,0 +1,51 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "syndiary-domain-redirect",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-07-24",
+  "account_id": "ba3fc261d329527eed6651f58f390286",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "syndiary.app/*",
+      "zone_name": "syndiary.app"
+    },
+    {
+      "pattern": "www.syndiary.app/*",
+      "zone_name": "syndiary.app"
+    },
+    {
+      "pattern": "syndiary.info/*",
+      "zone_name": "syndiary.info"
+    },
+    {
+      "pattern": "www.syndiary.info/*",
+      "zone_name": "syndiary.info"
+    },
+    {
+      "pattern": "syndiary.io/*",
+      "zone_name": "syndiary.io"
+    },
+    {
+      "pattern": "www.syndiary.io/*",
+      "zone_name": "syndiary.io"
+    },
+    {
+      "pattern": "syndiary.net/*",
+      "zone_name": "syndiary.net"
+    },
+    {
+      "pattern": "www.syndiary.net/*",
+      "zone_name": "syndiary.net"
+    },
+    {
+      "pattern": "syndiary.org/*",
+      "zone_name": "syndiary.org"
+    },
+    {
+      "pattern": "www.syndiary.org/*",
+      "zone_name": "syndiary.org"
+    }
+  ]
+}
