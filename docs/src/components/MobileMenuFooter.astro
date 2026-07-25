@@ -1,0 +1,29 @@
+---
+/*
+ * Mobile menu footer. Composes Starlight's default (which now renders the
+ * SynDiary.com link via our SocialIcons override, an empty ThemeSelect, and the
+ * LanguageSelect — the last returns automatically once a second locale exists),
+ * then appends a Support link.
+ */
+import Default from '@astrojs/starlight/components/MobileMenuFooter.astro';
+---
+
+<Default {...Astro.props} />
+
+<nav class="sd-mobile-support" aria-label="SynDiary support">
+  <a href="https://www.syndiary.com/#contact" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
+
+<style>
+  .sd-mobile-support {
+    padding: 0.75rem 0 0.25rem;
+  }
+  .sd-mobile-support a {
+    font-weight: 600;
+    color: var(--sl-color-white);
+    text-decoration: none;
+  }
+  .sd-mobile-support a:hover {
+    color: var(--sd-color-link);
+  }
+</style>

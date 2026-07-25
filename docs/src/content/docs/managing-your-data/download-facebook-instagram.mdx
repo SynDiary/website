@@ -1,0 +1,140 @@
+---
+title: Download your Facebook & Instagram information
+description: Step-by-step guide to exporting your Facebook and Instagram data from Meta Accounts Center, ready for SynDiary.
+status: in-review
+platforms: [ios, android]
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import entryPoints from '../../../assets/meta-guide/accounts-center-entry-points.png';
+import accountsCenterHome from '../../../assets/meta-guide/accounts-center-home.png';
+import downloadAndSelect from '../../../assets/meta-guide/download-and-select-profiles.png';
+import { Image } from 'astro:assets';
+
+You'll use **Meta Accounts Center** to request a download of your information, save
+the ZIP file to your device, and keep it ready for SynDiary. **SynDiary never needs
+your Facebook or Instagram password.**
+
+:::caution[Only use Meta's official download process]
+Don't give your Facebook or Instagram password to third-party tools. Keep the
+downloaded ZIP in a secure place, and delete it when you no longer need it. It can
+contain photos, videos, messages, comments, and profile details.
+:::
+
+:::note[Exporting now, importing soon]
+This guide covers **exporting your data from Meta**, which you can do today. Direct
+import into SynDiary is being added. For now, follow the steps below and keep your
+ZIP file somewhere safe until the in-app import is available.
+:::
+
+## Before you start
+
+- Sign in to the Facebook or Instagram account you want to download from.
+- Use Wi-Fi and make sure your device has enough free storage, since large accounts create large ZIP files.
+- Choose **Download to device**, not *Transfer to another service*, when you need a file for SynDiary.
+- **Format:** choose **JSON** for app imports. Choose **HTML** if you want a personal archive to read manually.
+- **Date range:** choose **All time** for your complete history.
+- Keep the ZIP private.
+
+## Where to find Accounts Center
+
+Accounts Center is the shared settings area for Facebook and Instagram. You can open
+it from either app.
+
+| Where | Path |
+| --- | --- |
+| **Facebook app** | Menu → Settings & privacy → Settings → Accounts Center |
+| **Instagram app** | Profile → menu (three lines) → Settings and privacy (or Settings and activity) → Accounts Center |
+| **Desktop browser** | Open Meta Accounts Center → Your information and permissions → Download your information |
+
+<figure class="sd-shot">
+  <Image src={entryPoints} alt="Accounts Center at the top of the Facebook Settings & Privacy screen, and under Your account in the Instagram Settings and privacy screen" />
+  <figcaption>Where Accounts Center appears in Facebook (left) and Instagram (right). Source: Meta.</figcaption>
+</figure>
+
+## Option A: Download Facebook and Instagram together
+
+Use this when your Facebook and Instagram profiles are connected in the same Accounts
+Center and you want one request that includes both.
+
+<Steps>
+
+1. **Open Accounts Center.** Open Facebook or Instagram and go to Accounts Center using the path above.
+
+2. **Open "Your information and permissions".** Scroll to *Account settings* and select it, then choose **Download your information**.
+
+    <figure class="sd-shot">
+      <Image src={accountsCenterHome} alt="The Accounts Center home screen, with the Account settings section below Profiles and Connected experiences" />
+      <figcaption>Accounts Center. "Your information and permissions" sits under Account settings, below what you see here. Source: Meta.</figcaption>
+    </figure>
+
+3. **Choose "Download or transfer information"** on the next screen.
+
+4. **Select the accounts.** Choose the Facebook and Instagram profiles to include, then tap **Next**.
+
+    <figure class="sd-shot">
+      <Image src={downloadAndSelect} alt="The Download your information screen with a Request a download button, and the Select accounts and profiles screen with a Facebook and an Instagram profile both selected" />
+      <figcaption>Requesting a download (left), then selecting the Facebook and Instagram profiles to include (right). Source: Meta.</figcaption>
+    </figure>
+
+5. **Choose the amount of information.** Select **All available information** for a complete export.
+
+6. **Choose the destination.** Select **Download to device**, then tap **Next**.
+
+7. **Set download options.** For a full SynDiary import use **Date range: All time** and **Format: JSON**. (Larger media quality takes longer and creates a bigger file.)
+
+8. **Create the files.** Tap **Create files**. Meta starts preparing your download.
+
+9. **Download the ZIP when it's ready.** When Meta notifies you, return to *Download your information* and tap **Download**. Save the ZIP somewhere you can find it, such as Downloads or Files. (Meta may ask you to enter your password before the download starts, and prepared files stay available for a limited number of days.)
+
+10. **Keep the ZIP ready for SynDiary.** Store the file somewhere safe. When the Facebook/Instagram import option is available in the app, you'll select this ZIP.
+
+</Steps>
+
+## Option B: Download Facebook only
+
+<Steps>
+
+1. Open Facebook → Menu → Settings & privacy → Settings → **Accounts Center**.
+2. Go to **Your information and permissions → Download your information → Download or transfer information**.
+3. Select **only your Facebook profile**, then tap **Next**.
+4. Choose **All available information** (or specific categories if that's all you need).
+5. Choose **Download to device**.
+6. Use **Date range: All time** and **Format: JSON** for app import (HTML for a readable archive).
+7. Tap **Create files**, wait for the notification, then return and download the ZIP.
+
+</Steps>
+
+## Option C: Download Instagram only
+
+<Steps>
+
+1. Open Instagram → Profile → menu (three lines) → Settings and privacy (or Settings and activity) → **Accounts Center**.
+2. Go to **Your information and permissions → Download your information → Download or transfer information**.
+3. Select **only your Instagram profile**, then tap **Next**.
+4. Choose **All available information** (or *Some of your information* for selected categories).
+5. Choose **Download to device**.
+6. Use **Date range: All time** and **Format: JSON** for app import (HTML for a readable archive).
+7. Tap **Create files**, wait for the notification, then return and download the ZIP.
+
+</Steps>
+
+## Troubleshooting
+
+| Problem | What to try |
+| --- | --- |
+| I can't find Accounts Center. | Update Facebook or Instagram, then search Settings for "Accounts Center" or "Download your information." If both accounts are connected, try the other app. |
+| My download is still pending. | Wait for Meta's notification or email. Large accounts take longer to prepare. |
+| The download link expired. | Return to *Download your information* and request a new file. |
+| The ZIP is too large for my phone. | Use a desktop browser, or free up storage before downloading. |
+| I chose HTML but need JSON. | Request a new download and choose JSON as the format. |
+| I only downloaded one account. | Create a new request and select the missing Facebook or Instagram profile. |
+| I'm not sure the file is right for SynDiary. | Keep the original ZIP from Meta (don't unzip it). When in-app import is available, follow the prompts in SynDiary. They'll tell you exactly what to select. |
+
+## Short version
+
+Open Facebook or Instagram → **Accounts Center → Your information and permissions →
+Download your information → Download or transfer information**. Select Facebook,
+Instagram, or both. Choose **All available information**, **Download to device**,
+**All time**, and **JSON**. Tap **Create files**. When Meta says the file is ready,
+download the ZIP and keep it ready for SynDiary.

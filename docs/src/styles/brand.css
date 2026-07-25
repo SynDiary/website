@@ -1,0 +1,173 @@
+/*
+ * SynDiary brand layer for Starlight.
+ * Loads after tokens.css + fonts.css (see customCss order in astro.config.mjs).
+ * Maps Starlight's semantic CSS variables onto SynDiary tokens and applies the
+ * warm, rounded, orange look of the marketing site — without touching the
+ * PageFrame / TwoColumnContent / Sidebar layout components.
+ */
+
+/* Light-only. ThemeProvider forces data-theme=light, but keep native controls
+   (scrollbars, form fields) light too. */
+:root {
+  color-scheme: light;
+  --sl-font: var(--sd-font-sans);
+}
+
+/* Guard the landing's full-bleed warm band (100vw breakout) against horizontal
+   scroll on platforms with classic/always-visible scrollbars. `clip` (not
+   `hidden`) does NOT create a scroll container, so sticky header/sidebar still work. */
+html {
+  overflow-x: clip;
+}
+
+/* Landing (hero) page: the PageTitle override renders nothing on splash, which
+   leaves an empty 48px content panel above the hero, and the next panel draws a
+   border-top — together they read as a "double line" under the header. Hide the
+   empty panel and its divider. Scoped via :has(.sd-hero) so article pages keep
+   their normal panel hairline. */
+main:has(.sd-hero) .content-panel:not(:has(.sd-hero)) {
+  display: none;
+}
+main:has(.sd-hero) .content-panel {
+  border-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Palette. Applied to both :root and the light scope: ThemeProvider forces
+   light, and mirroring guards the pre-script instant / any future toggle.
+   -------------------------------------------------------------------------- */
+:root,
+:root[data-theme='light'] {
+  /* Orange accent system.
+     text-accent → links + active sidebar item. Uses the AA-safe --sd-color-link
+     (#bf3d00: clears 4.5:1 on white, the warm surface, and the accent-low tint).
+     accent → non-text UI only (focus rings, active bar, borders) where the 3:1
+     large/UI threshold applies, so the brighter brand orange is fine there. */
+  --sl-color-text-accent: var(--sd-color-link);
+  --sl-color-accent: var(--sd-color-brand);
+  --sl-color-accent-low: #fff0ea;
+  --sl-color-accent-high: #a83500;
+
+  /* Neutral gray ramp per the SynDiary Design System: surfaces are ONLY white
+     + the #fff5f2 tint; hairlines are neutral #ebebeb; text is the ink/muted
+     pair. Starlight's blue-hued (224) defaults are replaced with explicit
+     neutrals at equivalent lightness (contrast preserved). */
+  --sl-color-white: var(--sd-color-text);   /* strongest text = ink #1b1b1b */
+  --sl-color-gray-1: #2b2b2f;
+  --sl-color-gray-2: var(--sd-color-prose); /* body prose #3f3f45 */
+  --sl-color-gray-3: #5b5b60;
+  --sl-color-gray-4: #8b8b90;
+  --sl-color-gray-5: #c4c4c8;
+  --sl-color-gray-6: var(--sd-color-line);  /* hairlines/inline-code bg #ebebeb */
+  --sl-color-gray-7: #fcfcfd;               /* --surface-subtle (nav bg) */
+  --sl-color-hairline-light: var(--sl-color-gray-6);
+
+  /* Warm sidebar echoes the marketing site's alternating warm sections. */
+  --sl-color-bg-sidebar: var(--sd-color-surface-warm);
+}
+
+/* --------------------------------------------------------------------------
+   Typography — Sora, bold NEUTRAL headings (orange headings read garish in
+   long-form docs; the marketing "grey display + bold" maps to neutral here).
+   -------------------------------------------------------------------------- */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(.sd-hero-title),
+.content-panel h1:not(.sd-hero-title) {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   Shape — rounded, softly shadowed BLOCK-level containers. Never inline code.
+   -------------------------------------------------------------------------- */
+.starlight-aside {
+  border-radius: var(--sd-radius-card);
+  box-shadow: var(--sd-shadow-soft);
+}
+
+/* Code blocks (Expressive Code). Round the frame, not inline <code>. */
+.sl-markdown-content .expressive-code .frame {
+  border-radius: var(--sd-radius-card);
+  overflow: hidden;
+}
+
+/* Starlight <Card> / <CardGrid> (used by the landing grid in the next chunk). */
+.sl-markdown-content .card {
+  border-radius: var(--sd-radius-card);
+  box-shadow: var(--sd-shadow-soft);
+}
+
+/* Default "note" aside → warm-neutral instead of Starlight's blue, so the most
+   common aside doesn't fight the warm palette. Note that Starlight's `caution`
+   is ALREADY orange and `danger` red, so we keep tip/caution/danger semantic and
+   only calm the note. */
+.starlight-aside--note {
+  --sl-color-asides-border: var(--sl-color-gray-4);
+  /* Explicit brand ink (NOT --sl-color-white, whose light-mode value only reads
+     dark because Starlight inverts it — a maintenance trap). */
+  --sl-color-asides-text-accent: var(--sd-color-text);
+  /* One step deeper than the sidebar tone so the fill actually registers on the
+     white content column and stays distinct from the warm sidebar. */
+  background-color: #ffeee8;
+}
+
+/* --------------------------------------------------------------------------
+   Search — pill trigger, echoing the marketing site's rounded-pill inputs.
+   Direct child only, so it never hits the search dialog's inner buttons.
+   -------------------------------------------------------------------------- */
+site-search > button {
+  border-radius: 999px;
+}
+
+/* The modal's input focus ring: brand orange instead of the UA-default blue
+   (Pagefind styles the border but leaves the browser's own outline). Fallback
+   if this internal selector ever stops matching is only the UA ring. */
+site-search dialog input:focus {
+  outline: 2px solid var(--sd-color-brand);
+  outline-offset: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   Prev/next pagination — Starlight's default titles are display-size
+   (--sl-text-2xl); bring them down to card-title territory and align the
+   cards with the brand's rounded, softly-shadowed language.
+   -------------------------------------------------------------------------- */
+.pagination-links a {
+  border-radius: var(--sd-radius-card);
+  border-color: var(--sl-color-gray-6);
+  box-shadow: var(--sd-shadow-soft);
+  color: var(--sd-color-muted);
+  font-size: var(--sl-text-sm);
+}
+.pagination-links a:hover {
+  border-color: var(--sd-color-brand);
+}
+.pagination-links .link-title {
+  font-size: var(--sl-text-lg);
+  font-weight: 600;
+}
+.pagination-links a:hover .link-title {
+  color: var(--sd-color-link);
+}
+
+/* Guide screenshots: centered figure with rounded image and a muted caption. */
+.sd-shot {
+  margin: 1.5rem auto;
+  max-width: 30rem;
+  text-align: center;
+}
+.sd-shot img {
+  border-radius: var(--sd-radius-card);
+  border: 1px solid var(--sd-color-line);
+  height: auto;
+}
+.sd-shot figcaption {
+  margin-top: 0.6rem;
+  font-size: var(--sl-text-xs);
+  color: var(--sd-color-muted);
+}
+
+/* Brand text selection — a small but persistent kinship signal on every page. */
+::selection {
+  background-color: #ffddd0;
+  color: var(--sd-color-text);
+}

@@ -1,0 +1,27 @@
+---
+/*
+ * Replaces Starlight's social-icon row with a link back to the marketing site.
+ * Rendered in the header's right group (and available to the mobile menu).
+ */
+---
+
+<a class="sd-site-link" href="https://www.syndiary.com" target="_blank" rel="noopener noreferrer">
+  SynDiary.com
+  <span aria-hidden="true">↗</span>
+</a>
+
+<style>
+  .sd-site-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .sd-site-link:hover {
+    color: var(--sd-color-link);
+  }
+</style>

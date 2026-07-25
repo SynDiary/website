@@ -1,0 +1,6 @@
+# Cloudflare Pages config-as-code for docs.syndiary.com.
+# Static Starlight build — no Pages Functions, no Worker script.
+name = "syndiary-docs"
+pages_build_output_dir = "./dist"
+# Required key, but inert for a pure-static Pages project (no Functions/Worker runtime).
+compatibility_date = "2026-07-24"

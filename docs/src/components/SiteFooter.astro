@@ -1,0 +1,61 @@
+---
+/*
+ * Full-width site footer, appended after the page frame by the PageFrame
+ * override. Mirrors the marketing site's footer: the system's single dark
+ * block (#212529), contained content row, © + legal links at 50%-white.
+ */
+---
+
+<footer class="sd-site-footer">
+  <div class="sd-site-footer-inner">
+    <p class="sd-site-footer-copy">© <a href="https://www.syndiary.com" target="_blank" rel="noopener noreferrer">SynDiary</a> {new Date().getFullYear()}</p>
+    <nav class="sd-site-footer-links" aria-label="SynDiary links">
+      <a href="https://www.syndiary.com" target="_blank" rel="noopener noreferrer">SynDiary.com</a>
+      <a href="https://www.syndiary.com/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      <a href="https://www.syndiary.com/terms-of-service.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+      <a href="https://www.syndiary.com/#contact" target="_blank" rel="noopener noreferrer">Support</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .sd-site-footer {
+    /* Above the fixed sidebar pane (5), below the navbar (10), so the bar
+       slides over the sidebar at page bottom like a normal in-flow footer. */
+    position: relative;
+    z-index: 6;
+    background: var(--sd-color-dark);
+    padding: 2rem var(--sl-nav-pad-x);
+    font-size: var(--sl-text-sm);
+  }
+  .sd-site-footer-inner {
+    max-width: 82.5rem; /* --container-max (1320px) */
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+  .sd-site-footer-copy {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5); /* --text-on-dark */
+  }
+  .sd-site-footer-copy a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .sd-site-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+  }
+  .sd-site-footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+  }
+  .sd-site-footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+</style>

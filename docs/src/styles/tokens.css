@@ -1,0 +1,6 @@
+/*
+ * Bridge stylesheet: pull the canonical SynDiary brand tokens from the
+ * monorepo /shared directory (outside the docs/ Astro root). Vite is granted
+ * read access to that path via `vite.server.fs.allow` in astro.config.mjs.
+ */
+@import "../../../shared/brand-tokens.css";

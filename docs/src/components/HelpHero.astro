@@ -1,0 +1,110 @@
+---
+/*
+ * Landing hero. The search "box" is a real <button> that opens the single
+ * existing header Pagefind modal — no second search index. It hides itself if
+ * the header trigger isn't present (e.g. Pagefind not built in `dev`).
+ */
+---
+
+<div class="sd-hero" data-pagefind-ignore>
+  <h1 class="sd-hero-title">How can we <span class="sd-hero-strong">help?</span></h1>
+  <p class="sd-hero-sub">Find answers, guides, and troubleshooting for SynDiary.</p>
+
+  <button
+    type="button"
+    class="sd-search-launcher"
+    aria-haspopup="dialog"
+  >
+    <svg class="sd-search-glyph" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </svg>
+    <span class="sd-search-text">Search SynDiary Help</span>
+  </button>
+</div>
+
+<script>
+  const launcher = document.querySelector('.sd-search-launcher');
+  const getTrigger = () => document.querySelector('[data-open-modal]');
+  if (launcher instanceof HTMLButtonElement) {
+    if (!getTrigger()) {
+      // No search modal on the page (e.g. Pagefind not built in dev) — hide the
+      // launcher rather than present a dead control.
+      launcher.hidden = true;
+    } else {
+      launcher.addEventListener('click', () => {
+        // Defer to the next task so THIS click finishes bubbling first —
+        // otherwise Starlight's "close on outside click" handler catches it and
+        // instantly closes the modal we just opened. Programmatic .click() also
+        // doesn't move focus, so the modal restores focus to this launcher on close.
+        setTimeout(() => getTrigger()?.click(), 0);
+      });
+    }
+  }
+</script>
+
+<style>
+  .sd-hero {
+    text-align: center;
+    padding-block: 3.5rem 2.5rem;
+  }
+  /* The brand's signature display gesture: light muted lead + bold near-black
+     key phrase (SynDiary Design System / SectionHeading). Orange is reserved
+     for eyebrows, icons, and controls — never heading words. */
+  .sd-hero-title {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* display-5 → display-4 */
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--sd-color-muted);
+  }
+  .sd-hero-strong {
+    font-weight: 700;
+    color: #000;
+  }
+  .sd-hero-sub {
+    margin: 0.75rem auto 0;
+    max-width: 38rem;
+    color: var(--sd-color-muted);
+    font-size: 1.25rem; /* --text-lead */
+    font-weight: 300;
+  }
+
+  /* Search launcher styled as the marketing form-field pattern — a fully pill-
+     rounded shell with a 2px solid black border — but it's a button (opens a dialog). */
+  .sd-search-launcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2rem;
+    min-width: min(30rem, 100%);
+    padding: 0.85rem 1.5rem;
+    background: var(--sl-color-bg);
+    color: var(--sd-color-muted);
+    border: 2px solid var(--sd-color-text);
+    border-radius: 999px;
+    font: inherit;
+    font-size: var(--sl-text-base);
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .sd-search-launcher:hover {
+    border-color: var(--sd-color-brand);
+  }
+  /* Dual focus affordance: keep the strong black shell AND add the orange ring. */
+  .sd-search-launcher:focus-visible {
+    outline: 2px solid var(--sd-color-brand);
+    outline-offset: 2px;
+  }
+  .sd-search-glyph {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--sd-color-brand);
+    flex-shrink: 0;
+  }
+  .sd-search-text {
+    flex: 1;
+    text-align: start;
+  }
+</style>
