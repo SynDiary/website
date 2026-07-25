@@ -18,7 +18,7 @@ By default, nothing you write leaves your device. That includes:
 - Photos, audio recordings, and other media you attach.
 - Your settings and preferences.
 
-Imports are processed entirely on your device. Importing an Instagram or Facebook archive doesn't connect to Instagram or Facebook. The app reads the file you already downloaded and does its work locally.
+Imports are processed entirely on your device. That will include the Instagram and Facebook archive import once it ships: it reads the export file you already downloaded and never connects to Instagram or Facebook. See [Managing your data](/managing-your-data/) for what you can bring in today.
 
 ## What can leave your device, and when
 
@@ -32,15 +32,15 @@ Cloud AI stays off until you turn it on. Once it's on, the messages, personal co
 
 ### AI model downloads
 
-If you download an on-device AI model, the app fetches the model files from Hugging Face's content delivery network. This is a standard web download that you start yourself. None of your content is transmitted, only the model files.
+If you download an on-device AI model, the app fetches the model files from Hugging Face's content delivery network. This is a standard web download that you start yourself. None of your content is transmitted, only the model files, though the file host, like any website you visit, sees your IP address.
 
 ### Calendar feed sync
 
-If you add a Google Calendar feed by URL, the app periodically fetches that feed so your events show up in your timeline. The request goes directly from your device to the calendar host. Importing from your device calendar or from a calendar file is different: those are read locally, with no network access.
+If you add a Google Calendar feed by URL, the app periodically fetches that feed so your events show up in your timeline. The request goes directly from your device to the calendar host, which sees standard web-request metadata. Importing from your device calendar or from a calendar file is different: those are read locally, with no network access.
 
 ### App update check
 
-On mobile, the app checks at most every six hours whether the installed version is still current, by fetching a small static file from www.syndiary.com. The request carries no identifiers and no cookies. It's an anonymous check, not a tracking call.
+On mobile, the app checks at most every six hours whether the installed version is still current, by fetching a small static file from www.syndiary.com. The request carries no identifiers and no cookies, though like any web request it reveals your IP address, and the web host learns that the app launched. It's an anonymous check, not a tracking call.
 
 ### Feedback
 

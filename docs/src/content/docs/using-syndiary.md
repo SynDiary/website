@@ -38,7 +38,7 @@ The Reports tab summarizes your data at a glance. Horizontally scrolling stat ca
 
 ## Settings
 
-Settings groups its options under section headers, covering things like AI, privacy, and general preferences. Two are worth knowing about early: an **Advanced mode** switch that changes which options are visible elsewhere in the app, and an **analytics** switch, which is off by default. Turning analytics on shares anonymized usage counts and never your content.
+Settings groups its options under section headers, covering things like AI, privacy, and general preferences. Two are worth knowing about early: an **Advanced mode** switch that changes which options are visible elsewhere in the app, and an **analytics** switch, which is off by default. Turning analytics on records anonymized usage counts, never your content, and in the current version those events stay on your device; see [Privacy, security & permissions](/privacy-security-permissions/) for details.
 
 :::note[Beta]
 SynDiary is in beta, so details may shift between releases.
