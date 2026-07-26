@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="img/logo.svg" type="image/svg+xml">
         <title>Privacy Policy | SynDiary</title>
-        <meta name="description" content="How SynDiary keeps diary data local, what optional actions can send data elsewhere, and the choices available to you.">
+        <meta name="description" content="How SynDiary keeps your personal data local, what optional actions can send data elsewhere, and the choices available to you.">
         <link rel="canonical" href="https://www.syndiary.com/privacy-policy.html">
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="vendor/remixicon/remixicon.css">
@@ -33,7 +33,7 @@
 
             <section class="policy-summary">
                 <h2 class="h4 mt-0">The short version</h2>
-                <p class="mb-0">SynDiary is a local-first diary with no SynDiary account and no developer-operated diary backend. Your entries, imports, media, reports, diagnostics, and crash records stay in app storage by default. Data leaves only through the specific operating-system services and deliberate actions described below — including exports, optional cloud AI, and a confirmed report of an AI response.</p>
+                <p class="mb-0">SynDiary is a local-first personal data store with no SynDiary account and no developer-operated backend that stores the data you keep in the app. Your entries, imports, media, reports, diagnostics, and crash records stay in app storage by default. Data leaves only through the specific operating-system services and deliberate actions described below — including exports, optional cloud AI, and a confirmed report of an AI response.</p>
             </section>
 
             <section>
@@ -43,19 +43,19 @@
 
             <section>
                 <h2>2. No account or registration</h2>
-                <p>The app works without an account. We do not ask for your name, email address, phone number, or another identifier to use your diary. We receive contact details only if you decide to contact us, and an AI response report contains no account identifier because there is no SynDiary account.</p>
+                <p>The app works without an account. We do not ask for your name, email address, phone number, or another identifier to use the app. We receive contact details only if you decide to contact us, and an AI response report contains no account identifier because there is no SynDiary account.</p>
             </section>
 
             <section>
                 <h2>3. What stays on your device</h2>
                 <p>The following is processed in app storage by default:</p>
                 <ul>
-                    <li>Diary entries, notes, moods, reports, and anything else you write.</li>
+                    <li>Entries, notes, moods, events, people, places, reports, and anything else you record.</li>
                     <li>Archive and calendar data you deliberately import.</li>
                     <li>Photos, voice recordings, and other media you attach.</li>
                     <li>Settings, on-device diagnostics, and local crash records.</li>
                 </ul>
-                <p>SynDiary stores its database encrypted at rest by default. We cannot read or recover this data because it does not reach a SynDiary diary server. Android is an important exception to the “only on this device” shorthand: if you enable Google’s backup or device-transfer service, eligible app data can be copied and restored by the operating system under your Google settings and Google’s terms. See section 4.</p>
+                <p>SynDiary stores its database encrypted at rest by default. We cannot read or recover this data because no SynDiary server receives it. Android is an important exception to the “only on this device” shorthand: if you enable Google’s backup or device-transfer service, eligible app data can be copied and restored by the operating system under your Google settings and Google’s terms. See section 4.</p>
             </section>
 
             <section>
@@ -65,7 +65,7 @@
                 <p>When you export or share, you choose the destination. An encrypted-at-rest export is available; a plain-text export warns that the exported copy is unprotected. The receiving app, storage location, or person handles the copy under their own practices.</p>
 
                 <h3>Cloud AI — optional, off by default, your own key</h3>
-                <p>Supported AI features can run on your device. If you deliberately enable a cloud route and add your own supported-provider key, the prompt, selected diary context, or audio needed for that request goes directly to the provider you chose. A persistent in-app indicator shows when cloud AI is active. The provider processes the data under its own terms and may receive sensitive diary context and normal network metadata.</p>
+                <p>Supported AI features can run on your device. If you deliberately enable a cloud route and add your own supported-provider key, the prompt, the context you selected from your data, or the audio needed for that request goes directly to the provider you chose. A persistent in-app indicator shows when cloud AI is active. The provider processes the data under its own terms and may receive sensitive personal context from your data and normal network metadata.</p>
                 <p>Supported providers can include <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>, <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI</a>, <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>, and <a href="https://deepgram.com/privacy" target="_blank" rel="noopener">Deepgram</a>. Turn cloud AI off in Settings to return to on-device routes.</p>
 
                 <h3>AI response reports — only after confirmation</h3>
@@ -76,10 +76,10 @@
                     <li>a random report reference generated for that report; and</li>
                     <li>the submission time.</li>
                 </ul>
-                <p>It does not include your prompt, conversation history, diary memory, provider key, email address, advertising identifier, or device identifier. The report is sent encrypted in transit to SynDiary through a dedicated first-party API hosted by Netlify and is used only for app functionality and content safety. The API validates the narrow payload, rate-limits requests, and stores an identical retry only once under its stable reference. It is not sold, used for advertising, or linked to a SynDiary account. A scheduled process deletes reports after 89 days, within the stated 90-day maximum. To request earlier deletion, email <a href="mailto:info@syndiary.com">info@syndiary.com</a> with the selectable or copyable reference shown in the app’s receipt.</p>
+                <p>It does not include your prompt, conversation history, the app’s AI memory, provider key, email address, advertising identifier, or device identifier. The report is sent encrypted in transit to SynDiary through a dedicated first-party API hosted by Netlify and is used only for app functionality and content safety. The API validates the narrow payload, rate-limits requests, and stores an identical retry only once under its stable reference. It is not sold, used for advertising, or linked to a SynDiary account. A scheduled process deletes reports after 89 days, within the stated 90-day maximum. To request earlier deletion, email <a href="mailto:info@syndiary.com">info@syndiary.com</a> with the selectable or copyable reference shown in the app’s receipt.</p>
 
                 <h3>On-device AI model downloads</h3>
-                <p>If you ask the app to download a model, the model file is fetched from its host. No diary content is included, but the host receives normal web-request data such as your IP address.</p>
+                <p>If you ask the app to download a model, the model file is fetched from its host. No content from your data is included, but the host receives normal web-request data such as your IP address.</p>
 
                 <h3>Calendar feed sync</h3>
                 <p>If you add a calendar feed URL, SynDiary fetches that URL so events can appear in your timeline. The calendar host receives normal web-request metadata. Device-calendar and calendar-file imports are handled locally.</p>
@@ -91,14 +91,14 @@
                 <p>Diagnostics and recent crash records remain on your device. Nothing is uploaded automatically. If you choose to send feedback, the app opens a message you can review and edit before sending.</p>
 
                 <h3>Android backup and device transfer</h3>
-                <p>Android can include eligible SynDiary app data in Google backup or device transfer when that service is enabled in your operating-system settings. SynDiary excludes downloaded AI models and temporary staging data, but diary data can be included. Google controls transport, storage, retention, and restore under your account settings. Disable the service in Android settings if you do not want this operating-system-managed copy.</p>
+                <p>Android can include eligible SynDiary app data in Google backup or device transfer when that service is enabled in your operating-system settings. SynDiary excludes downloaded AI models and temporary staging data, but your SynDiary data can be included. Google controls transport, storage, retention, and restore under your account settings. Disable the service in Android settings if you do not want this operating-system-managed copy.</p>
             </section>
 
             <section>
                 <h2>5. Why we process limited data</h2>
                 <ul>
-                    <li><strong>Local diary data:</strong> processed by the app under your control; it does not reach us.</li>
-                    <li><strong>AI response reports:</strong> your explicit consent under GDPR Article 6(1)(a) and, where the response contains special-category data, Article 9(2)(a). You can withdraw that consent for a stored report by using the deletion-by-reference process in Section 6.</li>
+                    <li><strong>Data held in the app:</strong> processed by the app under your control; it does not reach us.</li>
+                    <li><strong>AI response reports:</strong> your explicit consent under GDPR Article 6(1)(a) and, where the response contains special-category data, Article 9(2)(a). You can withdraw that consent for a stored report by using the deletion-by-reference process described in Section 4.</li>
                     <li><strong>Update requests and operational website logs:</strong> our legitimate interest in keeping released software safe and the website working.</li>
                     <li><strong>Support messages:</strong> responding to the request you send.</li>
                 </ul>
@@ -106,12 +106,12 @@
 
             <section>
                 <h2>6. Retention and deletion</h2>
-                <p>You control the diary in the app: edit or delete entries, export a copy, erase local app data, or uninstall the app. Operating-system backups are controlled through your Google settings. We delete AI response reports after 89 days and can locate an earlier-deletion request using the report reference. Support messages are kept only as long as needed to handle the request, subject to legal and security needs. Hosting providers can retain short-lived operational logs.</p>
+                <p>You stay in control inside the app: edit or delete entries, export a copy, erase local app data, or uninstall the app. Operating-system backups are controlled through your Google settings. We delete AI response reports after 89 days and can locate an earlier-deletion request using the report reference. Support messages are kept only as long as needed to handle the request, subject to legal and security needs. Hosting providers can retain short-lived operational logs.</p>
             </section>
 
             <section>
                 <h2>7. Your choices and rights</h2>
-                <p>Depending on where you live, you may have rights to access, correct, delete, restrict, object to, or port personal data and to withdraw consent. App-held diary data is self-service because only your copy of the app holds it. For information received by us, contact <a href="mailto:info@syndiary.com">info@syndiary.com</a>. You may also complain to your local data-protection authority.</p>
+                <p>Depending on where you live, you may have rights to access, correct, delete, restrict, object to, or port personal data and to withdraw consent. Data held in the app is self-service because only your copy of the app holds it. For information received by us, contact <a href="mailto:info@syndiary.com">info@syndiary.com</a>. You may also complain to your local data-protection authority.</p>
             </section>
 
             <section>
