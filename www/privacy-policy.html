@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="img/logo.svg" type="image/svg+xml">
         <title>Privacy Policy | SynDiary</title>
-        <meta name="description" content="Privacy Policy for SynDiary. Your diary stays on your device: no account, no tracking by default, encryption by default. Read what can leave your device and when.">
+        <meta name="description" content="How SynDiary keeps your personal data local, what optional actions can send data elsewhere, and the choices available to you.">
         <link rel="canonical" href="https://www.syndiary.com/privacy-policy.html">
         <!-- Bootstrap Css -->
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -61,7 +61,7 @@
 
                         <div class="mb-5">
                             <h2 class="h4 fw-bold mb-3">The short version</h2>
-                            <p class="text-muted">The SynDiary app is free, accountless, and local-first, with no ads or tracking. Your entries, imports, media, reports, on-device diagnostics, and sanitized crash records stay in app storage by default. SynDiary operates no diary-data storage or sync backend.</p>
+                            <p class="text-muted">SynDiary is a free, accountless, local-first personal data store with no ads or tracking. Your entries, imports, media, reports, on-device diagnostics, and sanitized crash records stay in app storage by default. SynDiary operates no backend that stores or syncs the personal data you keep in the app.</p>
                             <p class="text-muted">Data leaves only through the specific operating-system services and deliberate actions described below — including exports, optional BYOK cloud AI, and a confirmed report of an AI assistant response.</p>
                         </div>
 
@@ -80,7 +80,7 @@
                             <p class="text-muted">The following is processed in app storage by default:</p>
                             <ul class="text-muted">
                                 <li>Entries, notes, moods, events, people, places, reports, and anything else you record.</li>
-                                <li>Archive and calendar data you deliberately import.</li>
+                                <li>Archive, calendar, and selected photo data you deliberately import.</li>
                                 <li>Photos, audio recordings, and other media you attach.</li>
                                 <li>Settings, on-device diagnostics, and sanitized crash records.</li>
                             </ul>
@@ -107,13 +107,13 @@
                                 <li>a stable random <code>AIR-…</code> report reference; and</li>
                                 <li>the client submission time.</li>
                             </ul>
-                            <p class="text-muted">SynDiary never attaches your prompt, conversation history, diary memories, API key, email, account, device identifier, or location automatically. The report is sent over HTTPS to the dedicated first-party <code>https://www.syndiary.com/api/ai-output-reports</code> service. The service accepts a strict, size-limited schema, limits submissions to six per 60 seconds per IP and domain, and stores identical retries only once under the stable AIR reference. Reports are kept in a dedicated store, are not shared or used for tracking, and are deleted after at most 89 days. For earlier deletion, email <a href="mailto:info@syndiary.com" class="text-primary">info@syndiary.com</a> with the copyable AIR reference; that reference is the only report lookup key needed.</p>
+                            <p class="text-muted">SynDiary never attaches your prompt, conversation history, app AI memories, API key, email, account, device identifier, or location automatically. The report is sent over HTTPS to the dedicated first-party <code>https://www.syndiary.com/api/ai-output-reports</code> service. The service accepts a strict, size-limited schema, limits submissions to six per 60 seconds per IP and domain, and stores identical retries only once under the stable AIR reference. Reports are kept in a dedicated store, are not shared or used for tracking, and are deleted after at most 89 days. For earlier deletion, email <a href="mailto:info@syndiary.com" class="text-primary">info@syndiary.com</a> with the copyable AIR reference; that reference is the only report lookup key needed.</p>
 
                             <h3 class="h5 fw-semibold mt-4 mb-2">AI model downloads (user-initiated)</h3>
                             <p class="text-muted">If you download an on-device AI model, the app fetches the model files from Hugging Face's content delivery network. This is a standard web download: it transmits no personal content, though the file host — like any website you visit — sees your IP address.</p>
 
-                            <h3 class="h5 fw-semibold mt-4 mb-2">Calendar feed connections (only if you add one)</h3>
-                            <p class="text-muted">If you add a Google Calendar feed by URL, the app periodically fetches that feed so your events appear in your timeline. The request goes directly from your device to the calendar host (for example Google), which sees standard web-request metadata. Device-calendar imports and calendar-file imports are read locally and involve no network access.</p>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">Calendar imports and feed connections (only if you add one)</h3>
+                            <p class="text-muted">Device-calendar imports and calendar-file imports are read locally and involve no network access. If you add a calendar feed by URL, the app periodically fetches that feed so its events appear in your timeline. The request goes directly from your device to the calendar host, which sees standard web-request metadata.</p>
 
                             <h3 class="h5 fw-semibold mt-4 mb-2">App update check (automatic, anonymous)</h3>
                             <p class="text-muted">On mobile, the app periodically (at most every six hours) fetches a small static file from this website to learn whether the installed version is still safe to use. The request carries no identifiers, no cookies, and no personal data; like any web request, it reveals your IP address and the fact that the app launched to our web host.</p>
@@ -153,7 +153,7 @@
                             <p class="text-muted">SynDiary may ask for device permissions, always for a local purpose:</p>
                             <ul class="text-muted">
                                 <li><strong>Microphone:</strong> to record voice notes. Transcription runs on your device by default; audio is sent to a cloud provider only if you enabled cloud voice transcription with your own key (see section 4).</li>
-                                <li><strong>Calendar:</strong> to import your device calendar events into your timeline, locally.</li>
+                                <li><strong>Calendar:</strong> to import calendar events you select into your timeline, locally.</li>
                                 <li><strong>Photos:</strong> to attach images and run a user-initiated local photo import; SynDiary does not request broad Android audio or video-library access.</li>
                                 <li><strong>Files:</strong> through system pickers for archives and exports you choose.</li>
                                 <li><strong>Notifications:</strong> for reminders scheduled on the device.</li>
@@ -168,7 +168,7 @@
 
                         <div class="mb-5">
                             <h2 class="h4 fw-bold mb-3">10. Service providers and transfers</h2>
-                            <p class="text-muted">Our website, contact form, AI-report API, and dedicated report store are hosted by Netlify. The website contact form uses reCAPTCHA. Optional cloud AI and calendar features connect to the provider you select. These providers may process data outside your country under their own safeguards.</p>
+                            <p class="text-muted">Our website, contact form, AI-report API, and dedicated report store are hosted by Netlify. The website contact form uses reCAPTCHA. Optional cloud AI and network calendar feeds connect to the provider you select. These providers may process data outside your country under their own safeguards.</p>
                         </div>
 
                         <div class="mb-5">

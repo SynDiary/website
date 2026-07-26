@@ -47,14 +47,14 @@ const requiredPolicyFacts = [
   "accountless",
   "local-first",
   "no ads or tracking",
-  "SynDiary operates no diary-data storage or sync backend",
+  "SynDiary operates no backend that stores or syncs the personal data you keep in the app",
   "Nothing is uploaded automatically",
   "Optional BYOK cloud AI is off by default",
   "exact assistant response shown in the confirmation preview",
   "one allowed report category",
   "stable random <code>AIR-…</code> report reference",
   "client submission time",
-  "prompt, conversation history, diary memories, API key, email, account, device identifier, or location",
+  "prompt, conversation history, app AI memories, API key, email, account, device identifier, or location",
   "GDPR Article 6(1)(a)",
   "Article 9(2)(a)",
   "at most 89 days",
@@ -65,6 +65,17 @@ for (const fact of requiredPolicyFacts) {
   assert.ok(allHtml.includes(fact), `missing required public fact: ${fact}`);
 }
 
+assert.ok(
+  pageEntries
+    .find(([file]) => file === "index.html")[2]
+    .includes(
+      "Take control of your digital life. Consolidate your scattered data from social media, calendars, and more into a secure, personal hub. Unlock personal insights with reports and AI-powered analysis, all while keeping your data local-first, private and safe.",
+    ),
+  "homepage hero description must match the approved copy",
+);
+assert.ok(allHtml.includes("Your Personal Data Hub"), "homepage must position SynDiary as a personal data hub");
+assert.ok(allHtml.includes("calendar access is used for events you choose to import locally"), "calendar import must be described as available");
+
 const forbiddenClaims = [
   /health apps/i,
   /monetize (?:it|your data)/i,
@@ -73,6 +84,9 @@ const forbiddenClaims = [
   /SynDiary (?:cloud |server )?sync/i,
   /automatic analytics/i,
   /data monetization/i,
+  /support for additional platforms is coming soon/i,
+  /\bdiary(?:-data)?\b/i,
+  /\bjournal(?:ing)?\b/i,
 ];
 for (const pattern of forbiddenClaims) {
   assert.doesNotMatch(allHtml, pattern, `unsupported claim matched ${pattern}`);
