@@ -5,4 +5,8 @@
   publish = "www"
   # Skip redundant www deploys on docs-only commits: only build when www/ or this file changed.
   # Fail-safe: if either commit ref is empty (e.g. first deploy), the && chain fails → build runs.
-  ignore = "test -n \"$CACHED_COMMIT_REF\" && test -n \"$COMMIT_REF\" && git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- www netlify.toml"
+  ignore = "test -n \"$CACHED_COMMIT_REF\" && test -n \"$COMMIT_REF\" && git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- www netlify netlify.toml package.json package-lock.json"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

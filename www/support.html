@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+        <title>Support | SynDiary</title>
+        <meta name="description" content="Get help with SynDiary, including local data, backups, permissions, optional AI, and privacy requests.">
+        <link rel="canonical" href="https://www.syndiary.com/support">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/remixicon/remixicon.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="policy-page">
+        <div class="page-loading active" aria-hidden="true"><div class="page-loading-inner"><div class="page-spinner"></div><span>Opening support…</span></div></div>
+
+        <nav class="navbar navbar-expand-lg app-nav sticky-top py-3" aria-label="Main navigation">
+            <div class="container">
+                <a class="site-brand" href="index.html"><img src="img/logo.svg" alt="SynDiary"></a>
+                <div class="d-flex gap-4 align-items-center"><a href="privacy-policy.html">Privacy</a><a href="terms-of-service.html">Terms</a></div>
+            </div>
+        </nav>
+
+        <main class="container policy-shell py-5">
+            <header class="py-lg-5">
+                <p class="eyebrow">Help when you need it</p>
+                <h1 class="display-3 fw-bold">SynDiary Support</h1>
+                <p class="lead text-muted">Start with the user guide, or send us a message. SynDiary has no account, so include the app version and platform — never send your diary, recovery material, or API keys.</p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a class="btn btn-primary rounded-pill" href="mailto:info@syndiary.com">Email support</a>
+                    <a class="btn btn-outline-dark rounded-pill" href="https://docs.syndiary.com" target="_blank" rel="noopener">Open the user guide</a>
+                </div>
+            </header>
+
+            <section class="policy-summary">
+                <h2 class="h4 mt-0">Before contacting us</h2>
+                <p class="mb-0">SynDiary cannot access or recover your local diary. Make an export before troubleshooting storage, reinstalling, moving devices, or clearing app data. Keep recovery material private.</p>
+            </section>
+
+            <section>
+                <h2>Common questions</h2>
+
+                <h3>Where is my diary stored?</h3>
+                <p>In SynDiary app storage, encrypted at rest by default. There is no SynDiary account or diary-storage backend. On Android, Google backup or device transfer can include eligible app data when that operating-system service is enabled.</p>
+
+                <h3>How do I make a backup?</h3>
+                <p>Open Settings in the app and use its export or backup flow. Keep the resulting file and recovery material in a safe place you control. Do not rely on an operating-system backup as your only copy.</p>
+
+                <h3>Why does SynDiary ask for a permission?</h3>
+                <p>Microphone access is used only when you record; photo access is used when you select an image; calendar access is used for local event import; and notifications are used for device-scheduled reminders. Android builds do not request broad audio or video-library access.</p>
+
+                <h3>Does SynDiary send my diary to AI providers?</h3>
+                <p>Not by default. Supported AI routes can run on device. A cloud route is used only after you enable it and provide your own supported-provider key; the app shows when that route is active.</p>
+
+                <h3>How do I report an unsafe AI response?</h3>
+                <p>Use “Report response” beneath the displayed assistant response, choose a category, review the exact text, and confirm. Select or copy the reference from the receipt shown after submission. To request deletion before the scheduled deletion after 89 days, email that reference to <a href="mailto:info@syndiary.com">info@syndiary.com</a>.</p>
+
+                <h3>How do I erase my data?</h3>
+                <p>Use the erase controls in Settings or uninstall the app. Android backup copies are managed through your Google backup settings. Contact us separately if you previously sent support mail or an AI response report.</p>
+            </section>
+
+            <section>
+                <h2>Contact</h2>
+                <p>Email <a href="mailto:info@syndiary.com">info@syndiary.com</a>. Helpful details are your platform, app version, the action you took, and the visible error. Do not attach diary exports, recovery codes, API keys, or sensitive entries unless support explicitly asks for a narrowly scoped, redacted sample.</p>
+                <p>For privacy and report-deletion requests, put “Privacy request” in the subject. Include the AI report reference when relevant.</p>
+            </section>
+
+            <div class="py-5"><a class="btn btn-primary rounded-pill" href="index.html"><i class="ri-arrow-left-line me-2"></i>Back to SynDiary</a></div>
+        </main>
+
+        <footer class="footer-end py-5"><div class="container d-flex flex-wrap gap-4 justify-content-between"><p class="m-0">© 2026 SynDiary</p><nav class="d-flex gap-4"><a href="privacy-policy.html">Privacy</a><a href="terms-of-service.html">Terms</a></nav></div></footer>
+
+        <script src="vendor/jquery/jquery-3.6.4.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/aos/dist/aos.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
