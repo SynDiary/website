@@ -1,6 +1,6 @@
 ---
 title: Start here
-description: What SynDiary is, how to install the beta, and what to expect the first time you open it.
+description: What SynDiary is, how to install it, and what to expect the first time you open it.
 status: in-review
 platforms: [ios, android]
 ---
@@ -9,10 +9,8 @@ SynDiary is a local-first personal data store: one private place for the data yo
 
 ## Get the app
 
-SynDiary is currently in public beta:
-
-- **Android:** join through [Google Play](https://play.google.com/apps/testing/com.syndiary.coreapp).
-- **iOS:** join through [TestFlight](https://testflight.apple.com/join/mf47MN6d).
+- **Android:** get it on [Google Play](https://play.google.com/apps/testing/com.syndiary.coreapp).
+- **iOS:** get it on [TestFlight](https://testflight.apple.com/join/mf47MN6d).
 
 ## First launch
 
@@ -30,8 +28,8 @@ SynDiary's main screen has four tabs along the bottom, with a central button for
 - **AI Chat:** talk with an assistant about your data.
 - **Settings:** configure the app, including AI, privacy, and advanced options.
 
-:::note[Beta]
-SynDiary is in beta, so details may shift between releases.
+:::note
+SynDiary is under active development — details may shift between releases.
 :::
 
 From here:

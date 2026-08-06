@@ -75,8 +75,8 @@ When you export your data, you can choose an encrypted bundle (ZIP/JSON) or a pl
 
 If your encrypted storage uses a recovery code, keep it somewhere safe. Without it, that data can't be recovered by anyone, including the SynDiary team.
 
-:::note[Beta]
-SynDiary is in beta, so details may shift between releases.
+:::note
+SynDiary is under active development — details may shift between releases.
 :::
 
 This page explains SynDiary's privacy behavior in plain language. The binding documents are the [Privacy Policy](https://www.syndiary.com/privacy-policy.html) and [Terms of Service](https://www.syndiary.com/terms-of-service.html) on the main site. Questions? Reach the team at info@syndiary.com.
