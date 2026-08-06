@@ -57,7 +57,7 @@ const requiredPolicyFacts = [
   "prompt, conversation history, app AI memories, API key, email, account, device identifier, or location",
   "GDPR Article 6(1)(a)",
   "Article 9(2)(a)",
-  "at most 89 days",
+  "89 days after server receipt",
   "info@syndiary.com",
   "aged 13 and over",
 ];
