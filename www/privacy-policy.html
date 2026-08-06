@@ -57,7 +57,7 @@
                 <div class="row py-5">
                     <div class="col-lg-10 mx-auto">
                         <h1 class="display-4 fw-bold mb-4">Privacy Policy</h1>
-                        <p class="text-muted mb-5">Last updated: July 2026</p>
+                        <p class="text-muted mb-5">Last updated: August 2026</p>
 
                         <div class="mb-5">
                             <h2 class="h4 fw-bold mb-3">The short version</h2>
@@ -100,14 +100,18 @@
                             <p class="text-muted">Provider policies: <a href="https://policies.google.com/privacy" class="text-primary" target="_blank" rel="noopener noreferrer">Google</a>, <a href="https://openai.com/policies/privacy-policy" class="text-primary" target="_blank" rel="noopener noreferrer">OpenAI</a>, <a href="https://www.anthropic.com/legal/privacy" class="text-primary" target="_blank" rel="noopener noreferrer">Anthropic</a>, <a href="https://deepgram.com/privacy" class="text-primary" target="_blank" rel="noopener noreferrer">Deepgram</a>. These providers are typically based in the United States, so choosing one means your submitted content is transferred there under your direction and your agreement with that provider.</p>
 
                             <h3 class="h5 fw-semibold mt-4 mb-2">AI assistant response reports (only after confirmation)</h3>
-                            <p class="text-muted">You can explicitly report a displayed AI assistant response. Before anything is sent, SynDiary shows a confirmation preview containing the exact response and your selected category. A submitted report contains only:</p>
+                            <p class="text-muted">If the AI assistant produces a response you consider harmful, inaccurate, or inappropriate, you can report it so the SynDiary team can identify patterns and improve content-safety measures. This is the sole purpose of the feature; reports are never used for advertising, analytics, profiling, or any other purpose.</p>
+                            <p class="text-muted">Before anything is sent, SynDiary shows a confirmation preview containing the exact response and your selected category. A submitted report contains only these four fields:</p>
                             <ul class="text-muted">
                                 <li>the exact assistant response shown in the confirmation preview;</li>
-                                <li>one allowed report category;</li>
+                                <li>one allowed report category (e.g. "harmful", "inaccurate");</li>
                                 <li>a stable random <code>AIR-…</code> report reference; and</li>
                                 <li>the client submission time.</li>
                             </ul>
-                            <p class="text-muted">SynDiary never attaches your prompt, conversation history, app AI memories, API key, email, account, device identifier, or location automatically. The report is sent over HTTPS to the dedicated first-party <code>https://www.syndiary.com/api/ai-output-reports</code> service. The service accepts a strict, size-limited schema, limits submissions to six per 60 seconds per IP and domain, and stores identical retries only once under the stable AIR reference. Reports are kept in a dedicated store, are not shared or used for tracking, and are deleted after at most 89 days. For earlier deletion, email <a href="mailto:info@syndiary.com" class="text-primary">info@syndiary.com</a> with the copyable AIR reference; that reference is the only report lookup key needed.</p>
+                            <p class="text-muted">Nothing else is included. SynDiary never attaches your prompt, conversation history, app AI memories, API key, email, account, device identifier, or location.</p>
+                            <p class="text-muted">The report is sent over HTTPS to the dedicated first-party <code>https://www.syndiary.com/api/ai-output-reports</code> service. The service accepts a strict, size-limited schema, limits submissions to six per 60 seconds per IP and domain, and stores identical retries only once under the stable AIR reference. Reports are kept in a dedicated store and are not shared with third parties or used for tracking.</p>
+                            <p class="text-muted"><strong>Retention:</strong> every report is automatically deleted after at most 89 days. No action is needed on your part for this automatic deletion.</p>
+                            <p class="text-muted"><strong>Earlier deletion on request:</strong> to delete a report before the 89-day window, email <a href="mailto:info@syndiary.com" class="text-primary">info@syndiary.com</a> with the copyable <code>AIR-…</code> reference shown after submission. That reference is the only lookup key needed — no account or personal details are required to request deletion.</p>
 
                             <h3 class="h5 fw-semibold mt-4 mb-2">AI model downloads (user-initiated)</h3>
                             <p class="text-muted">If you download an on-device AI model, the app fetches the model files from Hugging Face's content delivery network. This is a standard web download: it transmits no personal content, though the file host — like any website you visit — sees your IP address.</p>

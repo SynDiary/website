@@ -38,6 +38,14 @@ If you download an on-device AI model, the app fetches the model files from Hugg
 
 If you add a Google Calendar feed by URL, the app periodically fetches that feed so your events show up in your timeline. The request goes directly from your device to the calendar host, which sees standard web-request metadata. Importing from your device calendar or from a calendar file is different: those are read locally, with no network access.
 
+### AI assistant response reports
+
+If the AI assistant produces a response you consider harmful, inaccurate, or inappropriate, you can report it. The purpose is to help the SynDiary team identify patterns and improve content-safety measures — reports are never used for ads, analytics, or profiling.
+
+Before anything is sent, the app shows a confirmation preview with the exact response and the category you picked. Only four fields are submitted: the assistant response, the report category, a random `AIR-…` reference, and the submission time. Your prompt, conversation history, AI memories, API key, and device identifiers are never included.
+
+Reports are sent over HTTPS to the SynDiary website and automatically deleted after at most 89 days. To delete a report sooner, email info@syndiary.com with the `AIR-…` reference shown after submission — no account or personal details needed.
+
 ### App update check
 
 On mobile, the app checks at most every six hours whether the installed version is still current, by fetching a small static file from www.syndiary.com. The request carries no identifiers and no cookies, though like any web request it reveals your IP address, and the web host learns that the app launched. It's an anonymous check, not a tracking call.
