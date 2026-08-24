@@ -42,20 +42,32 @@ House style for docs prose: no em dashes, straight quotes and apostrophes
 them), and no AI-tell-tale phrasing. See the design system project for the full
 voice rules.
 
-## Deployment — Cloudflare Pages
+## Deployment — Cloudflare Pages Direct Upload
 
-| Setting            | Value             |
-| ------------------ | ----------------- |
-| Production branch  | `main`            |
-| Root directory     | `docs`            |
-| Build command      | `npm run build`   |
-| Output directory   | `dist`            |
-| Node version       | `.nvmrc` → `22` (latest 22.x, must be ≥ 22.12). If you also set a `NODE_VERSION` env var in CF, keep it identical — the env var wins over `.nvmrc`. |
+The live `syndiary-docs` project is a Direct Upload project (`Git Provider: No`),
+so pushing `main` does not deploy it automatically. Production uses branch `main`.
+
+From `docs/`, build and upload the exact verified `main` commit:
+
+```sh
+npm ci
+npm run build
+npx wrangler pages deploy dist \
+  --project-name=syndiary-docs \
+  --branch=main \
+  --commit-hash=<main-sha> \
+  --commit-message="<main-subject>" \
+  --commit-dirty=false
+```
+
+Wrangler must be authenticated to the account that owns `syndiary-docs`. Confirm
+the resulting deployment is `Production`, has branch `main`, and records the
+provided commit SHA with `npx wrangler pages deployment list --project-name=syndiary-docs`.
 
 Build output dir is also declared in `wrangler.toml` (`pages_build_output_dir`).
 Static output — no Astro Cloudflare adapter needed. `public/_headers` is copied
-into `dist/` and honored by Pages. Per-PR/branch preview deployments are automatic
-via the GitHub integration.
+into `dist/` and honored by Pages. Use a non-`main` `--branch` value for preview
+deployments.
 
 Custom domain `docs.syndiary.com`: add it in the Pages project (the `syndiary.com`
 zone is already on Cloudflare, so DNS + TLS are auto-provisioned).
