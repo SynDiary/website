@@ -112,6 +112,15 @@ const redirects = await readFile(
   path.join(publishDirectory, "_redirects"),
   "utf8",
 );
+const netlifyConfig = await readFile(
+  path.join(repositoryRoot, "netlify.toml"),
+  "utf8",
+);
+assert.match(
+  netlifyConfig,
+  /ignore = "test \\"\$CONTEXT\\" != \\"production\\" &&/,
+  "Netlify production deploys must bypass the cached-ref ignore optimization",
+);
 assert.match(
   redirects,
   /^\/privacy\s+\/privacy-policy\.html\s+301!\s*$/m,
