@@ -26,9 +26,11 @@ Astro Starlight app. See [`docs/README.md`](docs/README.md) for local developmen
 build, and deployment details.
 
 - **Host:** Cloudflare Pages.
-- **Build settings:** root directory `docs`, build command `npm run build`,
-  output directory `dist`, production branch `main`, **Node ≥ 22.12** (`docs/.nvmrc`).
-  Config is also declared in `docs/wrangler.toml` (`pages_build_output_dir`).
+- **Deployment:** Cloudflare Pages Direct Upload project `syndiary-docs` (`Git Provider: No`),
+  using branch `main` for production. Build from `docs/` with `npm ci && npm run build`,
+  then upload `dist/` with Wrangler and the exact `main` commit metadata.
+- **Runtime:** **Node ≥ 22.12** (`docs/.nvmrc`). The output directory is declared in
+  `docs/wrangler.toml` (`pages_build_output_dir`).
 
 ## shared/ — design tokens
 
