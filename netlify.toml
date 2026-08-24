@@ -3,9 +3,9 @@
 # Netlify Forms + reCAPTCHA post-processing runs against HTML in the publish dir.
 [build]
   publish = "www"
-  # Skip redundant www deploys on docs-only commits: only build when www/ or this file changed.
-  # Fail-safe: if either commit ref is empty (e.g. first deploy), the && chain fails → build runs.
-  ignore = "test -n \"$CACHED_COMMIT_REF\" && test -n \"$COMMIT_REF\" && git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- www netlify netlify.toml package.json package-lock.json"
+  # Production always builds: deploy-preview cache refs can match main even while the published deploy is stale.
+  # Non-production deploys still skip docs-only changes. Missing refs fail closed to a build.
+  ignore = "test \"$CONTEXT\" != \"production\" && test -n \"$CACHED_COMMIT_REF\" && test -n \"$COMMIT_REF\" && git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- www netlify netlify.toml package.json package-lock.json"
 
 [functions]
   directory = "netlify/functions"
