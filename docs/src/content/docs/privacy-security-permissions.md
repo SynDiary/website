@@ -38,9 +38,17 @@ If you download an on-device AI model, the app fetches the model files from Hugg
 
 If you add a Google Calendar feed by URL, the app periodically fetches that feed so your events show up in your timeline. The request goes directly from your device to the calendar host, which sees standard web-request metadata. Importing from your device calendar or from a calendar file is different: those are read locally, with no network access.
 
+### AI assistant response reports
+
+If the AI assistant produces a response you consider harmful, inaccurate, or inappropriate, you can report it. We process reports to review and improve AI content safety, keep the reporting service functional and abuse-resistant, and provide related support when needed. Reports are never used for advertising or profiling.
+
+Before anything is sent, the app shows a confirmation preview with the exact response and the category you picked. Only four fields are submitted: the assistant response, one allowed report category (for example, `harmful` or `misleading`), a random `AIR-…` reference, and the submission time. Your prompt, conversation history, AI memories, API key, and device identifiers are never included.
+
+Reports are sent over HTTPS to the SynDiary website service hosted by Netlify. Like any web request, this exposes your IP address and standard request metadata to the host; this is used for transport and abuse protection (including rate limiting). Each accepted report gets an expiry timestamp 89 days after receipt, and a daily purge removes expired records, so automatic deletion happens within up to 24 hours after expiry (no later than about 90 days after receipt). To delete a report sooner, email [info@syndiary.com](mailto:info@syndiary.com) with the `AIR-…` reference shown after submission — no account or personal details needed.
+
 ### App update check
 
-On mobile, the app checks at most every six hours whether the installed version is still current, by fetching a small static file from www.syndiary.com. The request carries no identifiers and no cookies, though like any web request it reveals your IP address, and the web host learns that the app launched. It's an anonymous check, not a tracking call.
+On mobile, the app checks at most every six hours whether the installed version is still current, by fetching a small static file from [www.syndiary.com](https://www.syndiary.com). The request carries no identifiers and no cookies, though like any web request it reveals your IP address, and the web host learns that the app launched. It's an anonymous check, not a tracking call.
 
 ### Feedback
 
@@ -67,8 +75,8 @@ When you export your data, you can choose an encrypted bundle (ZIP/JSON) or a pl
 
 If your encrypted storage uses a recovery code, keep it somewhere safe. Without it, that data can't be recovered by anyone, including the SynDiary team.
 
-:::note[Beta]
-SynDiary is in beta, so details may shift between releases.
+:::note
+SynDiary is under active development — details may shift between releases.
 :::
 
-This page explains SynDiary's privacy behavior in plain language. The binding documents are the [Privacy Policy](https://www.syndiary.com/privacy-policy.html) and [Terms of Service](https://www.syndiary.com/terms-of-service.html) on the main site. Questions? Reach the team at info@syndiary.com.
+This page explains SynDiary's privacy behavior in plain language. The binding documents are the [Privacy Policy](https://www.syndiary.com/privacy-policy.html) and [Terms of Service](https://www.syndiary.com/terms-of-service.html) on the main site. Questions? Reach the team at [info@syndiary.com](mailto:info@syndiary.com).

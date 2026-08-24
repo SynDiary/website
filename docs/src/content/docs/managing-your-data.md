@@ -35,6 +35,6 @@ If your encrypted storage uses a recovery code, keep it somewhere safe, separate
 
 You can edit or delete individual entries at any time. Settings includes an option to clear all data, if you want to start fresh without removing the app. Uninstalling SynDiary removes everything it stored on your device.
 
-:::note[Beta]
-SynDiary is in beta, so details may shift between releases.
+:::note
+SynDiary is under active development — details may shift between releases.
 :::
