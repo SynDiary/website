@@ -2,154 +2,256 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="img/logo.svg" type="image/svg+xml">
         <title>Privacy Policy | SynDiary</title>
         <meta name="description" content="How SynDiary keeps your personal data local, what optional actions can send data elsewhere, and the choices available to you.">
         <link rel="canonical" href="https://www.syndiary.com/privacy-policy.html">
+        <!-- Bootstrap Css -->
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <!-- Remix Icon -->
         <link rel="stylesheet" href="vendor/remixicon/remixicon.css">
+        <!-- Remix Icon -->
+        <link rel="stylesheet" href="vendor/icofont/icofont.min.css">
+        <!-- AOS Css -->
+        <link rel="stylesheet" href="vendor/aos/dist/aos.css">
+        <!-- Custom Css -->
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="policy-page">
-        <div class="page-loading active" aria-hidden="true"><div class="page-loading-inner"><div class="page-spinner"></div><span>Opening policy…</span></div></div>
-
-        <nav class="navbar navbar-expand-lg app-nav sticky-top py-3" aria-label="Main navigation">
+    <body id="page-top">
+        <!-- Page loading spinner -->
+        <div class="page-loading active">
+            <div class="page-loading-inner">
+                <div class="page-spinner"></div>
+                <span>Loading...</span>
+            </div>
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar osahan-main-nav navbar-expand-lg app-nav py-3 py-lg-0 sticky-top bg-white" id="mainNav">
             <div class="container">
-                <a class="site-brand" href="index.html"><img src="img/logo.svg" alt="SynDiary"></a>
-                <div class="d-flex gap-4 align-items-center">
-                    <a href="support">Support</a>
-                    <a href="terms-of-service.html">Terms</a>
+                <div class="position-relative d-flex align-items-center gap-2 site-brand">
+                    <img src="img/logo.svg" alt="SynDiary">
+                    <a class="stretched-link" href="index.html" aria-label="SynDiary home"></a>
+                </div>
+
+                <button class="navbar-toggler border-0 shadow-none p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open navigation"><i class="ri-menu-3-line ri-lg"></i></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto gap-4">
+                        <li class="nav-item">
+                            <a class="nav-link py-4" href="index.html"><i class="ri-apps-2-line"></i> Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link py-4" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="index.html#benefits">Benefits</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="index.html#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="support">Support</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="index.html#contact">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
 
-        <main class="container policy-shell py-5">
-            <header class="py-lg-5">
-                <p class="eyebrow">SynDiary legal</p>
-                <h1 class="display-3 fw-bold">Privacy Policy</h1>
-                <p class="text-muted">Last updated: 26 July 2026</p>
-            </header>
+        <!-- Privacy Policy Content -->
+        <div id="privacy-policy" class="bg-white">
+            <div class="container py-5">
+                <div class="row py-5">
+                    <div class="col-lg-10 mx-auto">
+                        <h1 class="display-4 fw-bold mb-4">Privacy Policy</h1>
+                        <p class="text-muted mb-5">Last updated: August 2026</p>
 
-            <section class="policy-summary">
-                <h2 class="h4 mt-0">The short version</h2>
-                <p class="mb-0">SynDiary is a local-first personal data store with no SynDiary account and no developer-operated backend that stores the data you keep in the app. Your entries, imports, media, reports, diagnostics, and crash records stay in app storage by default. Data leaves only through the specific operating-system services and deliberate actions described below — including exports, optional cloud AI, and a confirmed report of an AI response.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">The short version</h2>
+                            <p class="text-muted">SynDiary is a free, accountless, local-first personal data store with no ads or tracking. Your entries, imports, media, reports, on-device diagnostics, and sanitized crash records stay in app storage by default. SynDiary operates no backend that stores or syncs the personal data you keep in the app.</p>
+                            <p class="text-muted">Data leaves only through the specific operating-system services and deliberate actions described below — including exports, optional BYOK cloud AI, and a confirmed report of an AI assistant response.</p>
+                        </div>
 
-            <section>
-                <h2>1. Who we are</h2>
-                <p>SynDiary is developed by the SynDiary team. For the limited information we receive directly, we act as controller. Contact <a href="mailto:info@syndiary.com">info@syndiary.com</a> or visit <a href="support">Support</a> for a privacy request.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">1. Who we are</h2>
+                            <p class="text-muted">SynDiary is developed by the SynDiary team (the "controller" for the limited processing described below, where any takes place). You can reach us at <a href="mailto:info@syndiary.com" class="text-primary">info@syndiary.com</a> for any privacy question or request.</p>
+                        </div>
 
-            <section>
-                <h2>2. No account or registration</h2>
-                <p>The app works without an account. We do not ask for your name, email address, phone number, or another identifier to use the app. We receive contact details only if you decide to contact us, and an AI response report contains no account identifier because there is no SynDiary account.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">2. No account, no registration</h2>
+                            <p class="text-muted">The app works without an account. We do not ask for, and do not collect, your name, email address, phone number, or any other contact details when you use the app. The only time we receive personal data from you is when you choose to contact us (for example by email or through the contact form on this website).</p>
+                        </div>
 
-            <section>
-                <h2>3. What stays on your device</h2>
-                <p>The following is processed in app storage by default:</p>
-                <ul>
-                    <li>Entries, notes, moods, events, people, places, reports, and anything else you record.</li>
-                    <li>Archive and calendar data you deliberately import.</li>
-                    <li>Photos, voice recordings, and other media you attach.</li>
-                    <li>Settings, on-device diagnostics, and local crash records.</li>
-                </ul>
-                <p>SynDiary stores its database encrypted at rest by default. We cannot read or recover this data because no SynDiary server receives it. Android is an important exception to the “only on this device” shorthand: if you enable Google’s backup or device-transfer service, eligible app data can be copied and restored by the operating system under your Google settings and Google’s terms. See section 4.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">3. What stays on your device</h2>
+                            <p class="text-muted">The following is processed in app storage by default:</p>
+                            <ul class="text-muted">
+                                <li>Entries, notes, moods, events, people, places, reports, and anything else you record.</li>
+                                <li>Archive, calendar, and selected photo data you deliberately import.</li>
+                                <li>Photos, audio recordings, and other media you attach.</li>
+                                <li>Settings, on-device diagnostics, and sanitized crash records.</li>
+                            </ul>
+                            <p class="text-muted">SynDiary stores its database encrypted at rest by default. We cannot read or recover this data because no SynDiary server receives it. Android is an exception to the shorthand “only on this device”: when you enable Google backup or device transfer, eligible encrypted app data may be handled by that operating-system service under your Google settings and Google’s terms.</p>
+                        </div>
 
-            <section>
-                <h2>4. What can leave your device</h2>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">4. What can leave your device — and when</h2>
+                            <p class="text-muted">Each item below is controlled by you or by an operating-system setting. Nothing else is uploaded automatically.</p>
 
-                <h3>Exports and sharing</h3>
-                <p>When you export or share, you choose the destination. An encrypted-at-rest export is available; a plain-text export warns that the exported copy is unprotected. The receiving app, storage location, or person handles the copy under their own practices.</p>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">Exports and sharing</h3>
+                            <p class="text-muted">When you export or share, you choose the destination. An encrypted-at-rest export is available; a plain-text export warns that the exported copy is unprotected. The receiving app, storage location, or person handles the copy under its own practices.</p>
 
-                <h3>Cloud AI — optional, off by default, your own key</h3>
-                <p>Supported AI features can run on your device. If you deliberately enable a cloud route and add your own supported-provider key, the prompt, the context you selected from your data, or the audio needed for that request goes directly to the provider you chose. A persistent in-app indicator shows when cloud AI is active. The provider processes the data under its own terms and may receive sensitive personal context from your data and normal network metadata.</p>
-                <p>Supported providers can include <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>, <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI</a>, <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>, and <a href="https://deepgram.com/privacy" target="_blank" rel="noopener">Deepgram</a>. Turn cloud AI off in Settings to return to on-device routes.</p>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">Cloud AI (optional, off by default, your own key)</h3>
+                            <p class="text-muted">SynDiary's AI features run <strong>on your device</strong> by default. If your device cannot run a local model, or you prefer a cloud model, you can connect your <em>own</em> API key for a supported provider: Google Gemini, OpenAI, or Anthropic for chat, and OpenAI or Deepgram for voice transcription.</p>
+                            <p class="text-muted">Cloud AI stays off until you explicitly enable it and add a key. Only content you approve for that request is sent over HTTPS directly to <strong>your selected provider</strong> and processed under that provider's own terms, using your key. A notice and persistent indicator show when a cloud route is active. Turn cloud AI off at any time in Settings to return to on-device processing.</p>
+                            <p class="text-muted">Provider policies: <a href="https://policies.google.com/privacy" class="text-primary" target="_blank" rel="noopener noreferrer">Google</a>, <a href="https://openai.com/policies/privacy-policy" class="text-primary" target="_blank" rel="noopener noreferrer">OpenAI</a>, <a href="https://www.anthropic.com/legal/privacy" class="text-primary" target="_blank" rel="noopener noreferrer">Anthropic</a>, <a href="https://deepgram.com/privacy" class="text-primary" target="_blank" rel="noopener noreferrer">Deepgram</a>. These providers are typically based in the United States, so choosing one means your submitted content is transferred there under your direction and your agreement with that provider.</p>
 
-                <h3>AI response reports — only after confirmation</h3>
-                <p>If a displayed AI response is unsafe, offensive, or otherwise problematic, you can choose “Report response.” Before anything is sent, SynDiary shows the exact response and asks you to confirm. A submitted report contains only:</p>
-                <ul>
-                    <li>the exact displayed assistant response;</li>
-                    <li>the category you select;</li>
-                    <li>a random report reference generated for that report; and</li>
-                    <li>the submission time.</li>
-                </ul>
-                <p>It does not include your prompt, conversation history, the app’s AI memory, provider key, email address, advertising identifier, or device identifier. The report is sent encrypted in transit to SynDiary through a dedicated first-party API hosted by Netlify and is used only for app functionality and content safety. The API validates the narrow payload, rate-limits requests, and stores an identical retry only once under its stable reference. It is not sold, used for advertising, or linked to a SynDiary account. A scheduled process deletes reports after 89 days, within the stated 90-day maximum. To request earlier deletion, email <a href="mailto:info@syndiary.com">info@syndiary.com</a> with the selectable or copyable reference shown in the app’s receipt.</p>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">AI assistant response reports (only after confirmation)</h3>
+                            <p class="text-muted">If the AI assistant produces a response you consider harmful, inaccurate, or inappropriate, you can report it. We process reports to review and improve AI content safety, keep the reporting service functional and abuse-resistant, and provide related support when needed. Reports are never used for advertising, profiling, or sold.</p>
+                            <p class="text-muted">Before anything is sent, SynDiary shows a confirmation preview containing the exact response and your selected category. A submitted report contains only these four fields:</p>
+                            <ul class="text-muted">
+                                <li>the exact assistant response shown in the confirmation preview;</li>
+                                <li>one allowed report category (for example, "harmful" or "misleading");</li>
+                                <li>a stable random <code>AIR-…</code> report reference; and</li>
+                                <li>the client submission time.</li>
+                            </ul>
+                            <p class="text-muted">Nothing else is included. SynDiary never attaches your prompt, conversation history, app AI memories, API key, email, account, device identifier, or location.</p>
+                            <p class="text-muted">The report is sent over HTTPS to the dedicated first-party <code>https://www.syndiary.com/api/ai-output-reports</code> service, which is hosted by Netlify as our processor. Like any web request, submitting a report exposes your IP address and standard request metadata to the host; this is used for transport and abuse protection (including rate limiting). The service accepts a strict, size-limited schema, limits submissions to six per 60 seconds per IP and domain, and stores identical retries only once under the stable AIR reference. Reports are kept in a dedicated store and are not shared or repurposed for advertising.</p>
+                            <p class="text-muted"><strong>Retention:</strong> each accepted report receives an expiry timestamp 89 days after server receipt. A daily purge job (03:15 UTC) deletes expired reports, so automatic deletion occurs within up to 24 hours after expiry (no later than about 90 days after receipt).</p>
+                            <p class="text-muted"><strong>Earlier deletion on request:</strong> to delete a report before automatic deletion, email <a href="mailto:info@syndiary.com" class="text-primary">info@syndiary.com</a> with the copyable <code>AIR-…</code> reference shown after submission. That reference is the only lookup key needed — no account or personal details are required to request deletion.</p>
 
-                <h3>On-device AI model downloads</h3>
-                <p>If you ask the app to download a model, the model file is fetched from its host. No content from your data is included, but the host receives normal web-request data such as your IP address.</p>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">AI model downloads (user-initiated)</h3>
+                            <p class="text-muted">If you download an on-device AI model, the app fetches the model files from Hugging Face's content delivery network. This is a standard web download: it transmits no personal content, though the file host — like any website you visit — sees your IP address.</p>
 
-                <h3>Calendar feed sync</h3>
-                <p>If you add a calendar feed URL, SynDiary fetches that URL so events can appear in your timeline. The calendar host receives normal web-request metadata. Device-calendar and calendar-file imports are handled locally.</p>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">Calendar imports and feed connections (only if you add one)</h3>
+                            <p class="text-muted">Device-calendar imports and calendar-file imports are read locally and involve no network access. If you add a calendar feed by URL, the app periodically fetches that feed so its events appear in your timeline. The request goes directly from your device to the calendar host, which sees standard web-request metadata.</p>
 
-                <h3>App update check</h3>
-                <p>On mobile, SynDiary periodically fetches a small static version file from this website. The request carries no app-created account or advertising identifier; the host still receives normal web-request data, including IP address.</p>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">App update check (automatic, anonymous)</h3>
+                            <p class="text-muted">On mobile, the app periodically (at most every six hours) fetches a small static file from this website to learn whether the installed version is still safe to use. The request carries no identifiers, no cookies, and no personal data; like any web request, it reveals your IP address and the fact that the app launched to our web host.</p>
 
-                <h3>Feedback and local diagnostics</h3>
-                <p>Diagnostics and recent crash records remain on your device. Nothing is uploaded automatically. If you choose to send feedback, the app opens a message you can review and edit before sending.</p>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">On-device diagnostics and crash records</h3>
+                            <p class="text-muted">On-device diagnostics and sanitized crash records remain on your device. Nothing is uploaded automatically. If you choose “send feedback,” the app opens a message you can review and edit before sending.</p>
 
-                <h3>Android backup and device transfer</h3>
-                <p>Android can include eligible SynDiary app data in Google backup or device transfer when that service is enabled in your operating-system settings. SynDiary excludes downloaded AI models and temporary staging data, but your SynDiary data can be included. Google controls transport, storage, retention, and restore under your account settings. Disable the service in Android settings if you do not want this operating-system-managed copy.</p>
-            </section>
+                            <h3 class="h5 fw-semibold mt-4 mb-2">Android backup and device transfer</h3>
+                            <p class="text-muted">Android may include eligible encrypted SynDiary app data in Google backup or device transfer when that service is enabled in your operating-system settings. Downloaded AI models and temporary staging data are excluded. Google controls transport, storage, retention, and restore under your account settings. This is operating-system-managed backup, not a SynDiary-operated sync backend.</p>
+                        </div>
 
-            <section>
-                <h2>5. Why we process limited data</h2>
-                <ul>
-                    <li><strong>Data held in the app:</strong> processed by the app under your control; it does not reach us.</li>
-                    <li><strong>AI response reports:</strong> your explicit consent under GDPR Article 6(1)(a) and, where the response contains special-category data, Article 9(2)(a). You can withdraw that consent for a stored report by using the deletion-by-reference process described in Section 4.</li>
-                    <li><strong>Update requests and operational website logs:</strong> our legitimate interest in keeping released software safe and the website working.</li>
-                    <li><strong>Support messages:</strong> responding to the request you send.</li>
-                </ul>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">5. Legal bases (GDPR)</h2>
+                            <ul class="text-muted">
+                                <li><strong>Data on your device:</strong> processed locally under your sole control; it never reaches us, so we do not process it at all.</li>
+                                <li><strong>Cloud AI:</strong> your explicit consent and direction, given by enabling the feature and confirmed in-session (GDPR Article 6(1)(a); for any special-category content you choose to submit, Article 9(2)(a)). Withdraw at any time by turning cloud AI off.</li>
+                                <li><strong>AI assistant response reports:</strong> your explicit consent under GDPR Article 6(1)(a) and, when the response contains special-category content, Article 9(2)(a). You can withdraw consent for a stored report through deletion by AIR reference.</li>
+                                <li><strong>Update check and website hosting logs:</strong> our legitimate interest in keeping released software safe and the website operating (Art. 6(1)(f)).</li>
+                                <li><strong>Support requests:</strong> handling the request you sent us (Art. 6(1)(b)/(f)).</li>
+                            </ul>
+                        </div>
 
-            <section>
-                <h2>6. Retention and deletion</h2>
-                <p>You stay in control inside the app: edit or delete entries, export a copy, erase local app data, or uninstall the app. Operating-system backups are controlled through your Google settings. We delete AI response reports after 89 days and can locate an earlier-deletion request using the report reference. Support messages are kept only as long as needed to handle the request, subject to legal and security needs. Hosting providers can retain short-lived operational logs.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">6. Retention and deletion</h2>
+                            <p class="text-muted">You control data held in the app: edit or delete entries, export a copy, erase local app data, or uninstall the app. Android backup copies are controlled through your Google settings.</p>
+                            <p class="text-muted">AI assistant response reports are retained until their 89-day expiry and then removed by the next daily purge run (normally within 24 hours, no later than about 90 days after receipt). They can be deleted earlier using the AIR reference. Emails and website contact-form messages are kept only as long as needed to handle the request, subject to legal and security needs. Hosting providers may retain short-lived operational logs.</p>
+                        </div>
 
-            <section>
-                <h2>7. Your choices and rights</h2>
-                <p>Depending on where you live, you may have rights to access, correct, delete, restrict, object to, or port personal data and to withdraw consent. Data held in the app is self-service because only your copy of the app holds it. For information received by us, contact <a href="mailto:info@syndiary.com">info@syndiary.com</a>. You may also complain to your local data-protection authority.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">7. Your rights</h2>
+                            <p class="text-muted">Under the GDPR and similar laws you have the right to access, correct, delete, restrict, object to processing of, and port your personal data, and to withdraw consent at any time. For data in the app these rights are self-service: the app itself is your access, correction, deletion, and export tool, because only you hold the data. For anything involving us directly (for example support emails), contact <a href="mailto:info@syndiary.com" class="text-primary">info@syndiary.com</a>.</p>
+                            <p class="text-muted">You also have the right to lodge a complaint with a data-protection supervisory authority — in the Netherlands, the <a href="https://www.autoriteitpersoonsgegevens.nl/" class="text-primary" target="_blank" rel="noopener noreferrer">Autoriteit Persoonsgegevens</a>.</p>
+                        </div>
 
-            <section>
-                <h2>8. Permissions</h2>
-                <ul>
-                    <li><strong>Microphone:</strong> only when you record a voice entry or use transcription.</li>
-                    <li><strong>Photos:</strong> only to select images you choose to attach; SynDiary does not request broad Android audio or video-library access.</li>
-                    <li><strong>Calendar:</strong> only to import selected device events locally.</li>
-                    <li><strong>Files:</strong> through system pickers for archives and exports you choose.</li>
-                    <li><strong>Notifications:</strong> for device-scheduled reminders, when offered and allowed.</li>
-                </ul>
-                <p>You can change permissions in your device settings.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">8. Permissions</h2>
+                            <p class="text-muted">SynDiary may ask for device permissions, always for a local purpose:</p>
+                            <ul class="text-muted">
+                                <li><strong>Microphone:</strong> to record voice notes. Transcription runs on your device by default; audio is sent to a cloud provider only if you enabled cloud voice transcription with your own key (see section 4).</li>
+                                <li><strong>Calendar:</strong> to import calendar events you select into your timeline, locally.</li>
+                                <li><strong>Photos:</strong> to attach images and run a user-initiated local photo import; SynDiary does not request broad Android audio or video-library access.</li>
+                                <li><strong>Files:</strong> through system pickers for archives and exports you choose.</li>
+                                <li><strong>Notifications:</strong> for reminders scheduled on the device.</li>
+                            </ul>
+                            <p class="text-muted">You can revoke any permission at any time in your device settings.</p>
+                        </div>
 
-            <section>
-                <h2>9. Age</h2>
-                <p>SynDiary is intended for people aged 13 and over. It has no account-registration path. If you believe a minor submitted information to us through support or an AI response report, contact us so we can investigate and delete it where appropriate.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">9. Age</h2>
+                            <p class="text-muted">SynDiary is intended for people aged 13 and over. It has no account-registration path. If you believe a minor submitted information through support, the website contact form, or an AI assistant response report, contact us so we can investigate and delete it where appropriate.</p>
+                        </div>
 
-            <section>
-                <h2>10. Service providers and transfers</h2>
-                <p>Our website, contact form, AI-report API, and dedicated report store are hosted by Netlify. Optional cloud AI and calendar features connect to the provider you select. These providers may process data outside your country under their own safeguards. The provider links in section 4 explain their practices.</p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">10. Service providers and transfers</h2>
+                            <p class="text-muted">Our website, contact form, AI-report API, and dedicated report store are hosted by Netlify. The website contact form uses reCAPTCHA. Optional cloud AI and network calendar feeds connect to the provider you select. These providers may process data outside your country under their own safeguards.</p>
+                        </div>
 
-            <section>
-                <h2>11. Changes and contact</h2>
-                <p>We will update this page and its date when the policy changes. Material changes to what can leave your device will also be reflected in the app before taking effect.</p>
-                <p><strong>SynDiary</strong><br><a href="mailto:info@syndiary.com">info@syndiary.com</a><br><a href="support">Support</a></p>
-            </section>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">11. Changes to this policy</h2>
+                            <p class="text-muted">We will post any changes on this page and update the "Last updated" date. For meaningful changes to what can leave your device, we will also update the in-app disclosures before the change takes effect.</p>
+                        </div>
 
-            <div class="py-5"><a class="btn btn-primary rounded-pill" href="index.html"><i class="ri-arrow-left-line me-2"></i>Back to SynDiary</a></div>
-        </main>
+                        <div class="mb-5">
+                            <h2 class="h4 fw-bold mb-3">12. Contact</h2>
+                            <p class="text-muted">
+                                <strong>SynDiary</strong><br>
+                                Email: <a href="mailto:info@syndiary.com" class="text-primary">info@syndiary.com</a><br>
+                                <a href="support" class="text-primary">Support</a>
+                            </p>
+                        </div>
 
-        <footer class="footer-end py-5"><div class="container d-flex flex-wrap gap-4 justify-content-between"><p class="m-0">© 2026 SynDiary</p><nav class="d-flex gap-4"><a href="support">Support</a><a href="terms-of-service.html">Terms</a></nav></div></footer>
+                        <div class="mt-5 pt-4">
+                            <a href="index.html" class="btn btn-primary rounded-pill">
+                                <i class="ri-arrow-left-line me-2"></i>Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <script src="vendor/jquery/jquery-3.6.4.min.js"></script>
+        <!-- Footer -->
+        <div class="footer-end py-5 bg-dark">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <p class="text-center m-0 text-white-50">Copyright © <a href="#" class="text-white">SynDiary</a> 2026</p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="text-center m-0">
+                            <a href="privacy-policy.html" class="text-white-50 me-3">Privacy Policy</a>
+                            <a href="terms-of-service.html" class="text-white-50 me-3">Terms of Service</a>
+                            <a href="support" class="text-white-50">Support</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav Sidebar -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar">
+            <div class="offcanvas-header d-flex align-items-center justify-content-between">
+                <div class="position-relative d-flex align-items-center gap-2 site-brand">
+                    <div class="lh-1">
+                        <img src="img/logo.svg" alt="SynDiary">
+                    </div>
+                    <a class="stretched-link" href="index.html" aria-label="SynDiary home"></a>
+                </div>
+                <a href="#" class="link-light" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-line ri-lg"></i></a>
+            </div>
+            <div class="offcanvas-body">
+                <div class="sidebar-nav">
+                    <ul class="navbar-nav mb-3">
+                        <li class="nav-item">
+                            <a class="nav-link py-4" href="index.html"><i class="ri-apps-2-line"></i> Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link py-4" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="index.html#benefits">Benefits</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="index.html#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="support">Support</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="index.html#contact">Contact</a></li>
+                    </ul>
+                    <a href="index.html" class="btn btn-primary w-100 btn-lg mt-3">Go to Home</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootsrap Bundle Js -->
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Jquery Js -->
+        <script src="vendor/jquery/jquery-3.6.4.min.js"></script>
+        <!-- AOS Js -->
         <script src="vendor/aos/dist/aos.js"></script>
+        <!-- Core theme JS-->
         <script src="js/script.js"></script>
     </body>
 </html>

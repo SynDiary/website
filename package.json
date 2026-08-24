@@ -3,10 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test \"netlify/functions/**/*.test.mjs\""
+    "build": "node scripts/verify-site.mjs",
+    "check:site": "node scripts/verify-site.mjs",
+    "test": "node --test \"netlify/functions/**/*.test.mjs\" \"test/**/*.test.mjs\""
   },
   "dependencies": {
-    "@netlify/blobs": "10.7.10"
+    "@netlify/blobs": "10.7.13"
   },
   "overrides": {
     "@opentelemetry/core": "2.9.0"

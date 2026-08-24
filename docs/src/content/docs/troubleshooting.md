@@ -37,6 +37,6 @@ Settings includes a send-feedback option that opens your email client with an ed
 
 You can also reach the team directly through the [contact form](https://www.syndiary.com/#contact).
 
-:::note[Beta]
-SynDiary is in beta, so details may shift between releases.
+:::note
+SynDiary is under active development — details may shift between releases.
 :::
