@@ -90,3 +90,33 @@ The scheduled `purge-ai-output-reports` Function runs daily at `03:15 UTC`.
 After each production deployment, verify its Scheduled badge and next run in
 Netlify, invoke **Run now**, and retain invocation status plus the count-only
 log as production evidence.
+
+## News and local preview
+
+The marketing site's news section is static HTML, using the existing theme.
+The homepage links to `www/news/index.html`; each story has its own directory
+with an `index.html`. The first story is `news/welcome-to-syndiary-news/`.
+News-specific layouts live in `www/css/news.css`.
+
+To preview without deploying, run from this checkout:
+
+```sh
+python3 -m http.server 8801 --bind 127.0.0.1 --directory www
+```
+
+Open `http://127.0.0.1:8801/` and follow **News**. The news listing is at
+`http://127.0.0.1:8801/news/`. This serves files only on this computer.
+
+For another story, copy the article directory, update its title, content,
+date, image, description, canonical URL, and social metadata, then add its
+card at the top of the list. Update the homepage card to the latest story.
+Add the new page and canonical URL to `requiredPages` in
+`scripts/verify-site.mjs`, then run `npm test` and `npm run build`.
+
+The first story was drafted by email on 30 September and is dated 1 October
+2026 for publication. The original email copy and image are preserved.
+Each new page includes Open Graph and Twitter metadata, image descriptions,
+and JSON-LD for the page and its breadcrumbs. Articles also include author,
+publisher, publication date, and modification date. Keep visible dates and
+metadata consistent. Add each canonical URL to `www/sitemap.xml`; `robots.txt`
+advertises this sitemap. Review time-sensitive wording before publication.
