@@ -14,6 +14,8 @@ const requiredPages = new Map([
   ["privacy-policy.html", "https://www.syndiary.com/privacy-policy.html"],
   ["terms-of-service.html", "https://www.syndiary.com/terms-of-service.html"],
   ["support.html", "https://www.syndiary.com/support"],
+  ["news/index.html", "https://www.syndiary.com/news/"],
+  ["news/welcome-to-syndiary-news/index.html", "https://www.syndiary.com/news/welcome-to-syndiary-news/"],
 ]);
 
 const pageEntries = await Promise.all(
@@ -39,6 +41,79 @@ for (const [file, canonical, html] of pageEntries) {
     1,
     `${file}: expected exactly one h1`,
   );
+}
+
+// News metadata must stay consistent with visible content and canonical URLs.
+const newsPages = pageEntries.filter(([file]) => file.startsWith("news/"));
+const sitemap = await readFile(path.join(publishDirectory, "sitemap.xml"), "utf8");
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+assert.deepEqual(new Set(sitemapUrls), new Set(requiredPages.values()), "sitemap must list every canonical page exactly once");
+assert.equal(sitemapUrls.length, requiredPages.size, "sitemap has duplicate URLs");
+const robots = await readFile(path.join(publishDirectory, "robots.txt"), "utf8");
+assert.match(robots, /^Sitemap: https:\/\/www\.syndiary\.com\/sitemap\.xml$/m);
+assert.doesNotMatch(robots, /^Disallow:\s*\/\s*$/m, "public pages must be crawlable");
+
+for (const [file, canonical, html] of newsPages) {
+  const metadata = new Map();
+  for (const match of html.matchAll(/<meta (?:name|property)="([^"]+)" content="([^"]*)">/g)) {
+    assert.ok(!metadata.has(match[1]), `${file}: duplicate ${match[1]}`);
+    metadata.set(match[1], match[2]);
+  }
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
+  assert.ok(title, `${file}: missing page title`);
+  assert.equal(metadata.get("og:title"), title);
+  assert.equal(metadata.get("twitter:title"), title);
+  assert.ok(metadata.get("description"), `${file}: missing description`);
+  assert.equal(metadata.get("og:description"), metadata.get("description"));
+  assert.equal(metadata.get("twitter:description"), metadata.get("description"));
+  assert.equal(metadata.get("og:url"), canonical);
+  assert.equal(metadata.get("twitter:url"), canonical);
+  assert.equal(metadata.get("twitter:card"), "summary_large_image");
+  assert.equal(metadata.get("robots"), "index, follow, max-image-preview:large");
+  for (const key of ["og:locale", "og:site_name", "og:image:alt", "twitter:image:alt", "author"]) {
+    assert.ok(metadata.get(key), `${file}: missing ${key}`);
+  }
+  const imageUrl = new URL(metadata.get("og:image"));
+  assert.equal(imageUrl.origin, new URL(canonical).origin);
+  assert.equal(metadata.get("twitter:image"), imageUrl.href);
+  const imageBytes = await readFile(path.join(publishDirectory, imageUrl.pathname));
+  assert.equal(imageBytes.subarray(1, 4).toString(), "PNG");
+  assert.equal(metadata.get("og:image:type"), "image/png");
+  assert.equal(Number(metadata.get("og:image:width")), imageBytes.readUInt32BE(16));
+  assert.equal(Number(metadata.get("og:image:height")), imageBytes.readUInt32BE(20));
+
+  const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  assert.equal(scripts.length, 1, `${file}: expected one structured-data graph`);
+  const schema = JSON.parse(scripts[0][1]);
+  assert.equal(schema["@context"], "https://schema.org");
+  const article = file.includes("welcome-to-syndiary-news");
+  const entity = schema["@graph"].find((node) => node["@type"] === (article ? "NewsArticle" : "CollectionPage"));
+  assert.ok(entity, `${file}: missing page schema`);
+  assert.equal(entity.url, canonical);
+  assert.equal(entity.description, metadata.get("description"));
+  assert.equal(entity.inLanguage, "en");
+  const breadcrumb = schema["@graph"].find((node) => node["@type"] === "BreadcrumbList");
+  assert.equal(breadcrumb.itemListElement.at(-1).item, canonical);
+  assert.deepEqual(breadcrumb.itemListElement.map((item) => item.position), breadcrumb.itemListElement.map((_, index) => index + 1));
+  if (article) {
+    const headline = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)[1].replace(/<br\s*\/?\s*>/g, " ").replace(/<[^>]+>/g, "").trim();
+    assert.equal(entity.headline, headline);
+    assert.equal(entity.image.url, imageUrl.href);
+    assert.equal(entity.author.name, metadata.get("author"));
+    assert.equal(entity.author.url, metadata.get("article:author"));
+    assert.ok(schema["@graph"].some((node) => node["@id"] === entity.publisher["@id"]), "publisher reference must resolve");
+    assert.equal(entity.datePublished, metadata.get("article:published_time"));
+    assert.equal(entity.dateModified, metadata.get("article:modified_time"));
+    assert.ok(Number.isFinite(Date.parse(entity.datePublished)));
+    assert.ok(Date.parse(entity.dateModified) >= Date.parse(entity.datePublished));
+    assert.ok(html.includes(`datetime="${entity.datePublished.slice(0, 10)}"`), "visible publication date must match schema");
+    assert.equal(entity.mainEntityOfPage["@id"], canonical);
+  } else {
+    assert.equal(entity.mainEntity.numberOfItems, entity.mainEntity.itemListElement.length);
+    for (const item of entity.mainEntity.itemListElement) {
+      assert.ok(sitemapUrls.includes(item.url), "listed articles must appear in sitemap");
+    }
+  }
 }
 
 const allHtml = pageEntries.map(([, , html]) => html).join("\n");
@@ -196,5 +271,5 @@ for (const [sourceFile, , html] of pageEntries) {
 }
 
 console.log(
-  `Verified ${requiredPages.size} required pages, policy facts, production layout assets, redirects, and local links.`,
+  `Verified ${requiredPages.size} required pages, news metadata and structured data, sitemap, policy facts, production layout assets, redirects, and local links.`,
 );

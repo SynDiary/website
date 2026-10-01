@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="vendor/aos/dist/aos.css">
         <!-- Custom Css -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/news.css">
 
         <!-- Facebook Meta Tags / Open Graph -->
         <meta property="og:title" content="SynDiary | Your Personal Data Hub" />
@@ -43,7 +44,7 @@
             </div>
         </div>
         <!-- Navbar -->
-        <nav class="navbar osahan-main-nav navbar-expand-lg app-nav py-3 py-lg-0 sticky-top bg-white" id="mainNav">
+        <nav class="navbar osahan-main-nav navbar-expand-lg app-nav news-site-nav py-3 py-lg-0 sticky-top bg-white" id="mainNav">
             <div class="container">
                 <div class="position-relative d-flex align-items-center gap-2 site-brand">
                     <img src="img/logo.svg" alt="SynDiary">
@@ -59,8 +60,9 @@
                         <li class="nav-item"><a class="nav-link py-4" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link py-4" href="#benefits">Benefits</a></li>
                         <li class="nav-item"><a class="nav-link py-4" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="news/">News</a></li>
                         <li class="nav-item"><a class="nav-link py-4" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link py-4" href="https://docs.syndiary.com" target="_blank" rel="noopener">Documentation</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="https://docs.syndiary.com" target="_blank" rel="noopener">Docs</a></li>
                         <li class="nav-item"><a class="nav-link py-4" href="#contact">Contact</a></li>
 
                     </ul>
@@ -310,7 +312,33 @@
             </div>
         </div>
 
-        <div class="bg-light" id="team">
+        <!-- News -->
+        <section class="news-home bg-light" id="news" aria-labelledby="news-heading">
+            <div class="container py-5">
+                <div class="news-section-heading">
+                    <div>
+                        <h2 class="display-4 fw-bold mb-3" id="news-heading">News</h2>
+                        <p class="text-muted mb-0">The latest from the SynDiary team.</p>
+                    </div>
+                    <a href="news/" class="news-text-link">All news <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+                </div>
+                <article class="news-story">
+                        <a class="news-story-link" href="news/welcome-to-syndiary-news/" aria-labelledby="home-welcome-title">
+                            <div class="news-story-art bg-light">
+                                <img src="img/syndiary_news.png" alt="SynDiary news, updates, guides, and help connected around the app" width="1448" height="1086" loading="lazy">
+                            </div>
+                            <div class="news-story-copy">
+                                <div class="news-meta"><span class="news-category">From the team</span><span aria-hidden="true">·</span><time datetime="2026-10-01">1 October 2026</time></div>
+                                <h3 class="news-story-title fw-bold" id="home-welcome-title">Welcome to SynDiary News</h3>
+                                <p class="text-muted">A new place for app updates, practical guides, and what’s coming next. Meet SynDiary Help, our dedicated documentation website.</p>
+                                <span class="news-read-link">Read the story <i class="ri-arrow-right-line" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </article>
+            </div>
+        </section>
+
+        <div class="bg-white" id="team">
             <div class="py-5">
                 <div class="container py-5">
                     <div class="row justify-content-center mb-5">
@@ -351,7 +379,7 @@
             </div>
         </div>
 
-        <div class="bg-white" id="contact">
+        <div class="bg-light" id="contact">
 
             <!-- Contact Form -->
             <div class="container py-5">
@@ -394,7 +422,8 @@
                             <p class="text-center m-0">
                                 <a href="privacy-policy.html" class="text-white-50 me-3">Privacy Policy</a>
                                 <a href="terms-of-service.html" class="text-white-50 me-3">Terms of Service</a>
-                                <a href="https://docs.syndiary.com" target="_blank" rel="noopener" class="text-white-50 me-3">Documentation</a>
+                                <a href="https://docs.syndiary.com" target="_blank" rel="noopener" class="text-white-50 me-3">Docs</a>
+                                <a href="news/" class="text-white-50 me-3">News</a>
                                 <a href="support.html" class="text-white-50">Support</a>
                             </p>
                         </div>
@@ -423,8 +452,9 @@
                         <li class="nav-item"><a class="nav-link py-4" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link py-4" href="#benefits">Benefits</a></li>
                         <li class="nav-item"><a class="nav-link py-4" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="news/">News</a></li>
                         <li class="nav-item"><a class="nav-link py-4" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link py-4" href="https://docs.syndiary.com" target="_blank" rel="noopener">Documentation</a></li>
+                        <li class="nav-item"><a class="nav-link py-4" href="https://docs.syndiary.com" target="_blank" rel="noopener">Docs</a></li>
                         <li class="nav-item"><a class="nav-link py-4" href="#contact">Contact</a></li>
                     </ul>
                     <a href="#home" class="btn btn-primary w-100 btn-lg mt-3">Get the App</a>
