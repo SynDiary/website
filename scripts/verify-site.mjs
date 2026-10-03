@@ -15,6 +15,7 @@ const requiredPages = new Map([
   ["terms-of-service.html", "https://www.syndiary.com/terms-of-service.html"],
   ["support.html", "https://www.syndiary.com/support"],
   ["news/index.html", "https://www.syndiary.com/news/"],
+  ["news/we-can-download-our-data-but-can-we-actually-use-it/index.html", "https://www.syndiary.com/news/we-can-download-our-data-but-can-we-actually-use-it/"],
   ["news/welcome-to-syndiary-news/index.html", "https://www.syndiary.com/news/welcome-to-syndiary-news/"],
 ]);
 
@@ -86,7 +87,7 @@ for (const [file, canonical, html] of newsPages) {
   assert.equal(scripts.length, 1, `${file}: expected one structured-data graph`);
   const schema = JSON.parse(scripts[0][1]);
   assert.equal(schema["@context"], "https://schema.org");
-  const article = file.includes("welcome-to-syndiary-news");
+  const article = file !== "news/index.html";
   const entity = schema["@graph"].find((node) => node["@type"] === (article ? "NewsArticle" : "CollectionPage"));
   assert.ok(entity, `${file}: missing page schema`);
   assert.equal(entity.url, canonical);
@@ -151,8 +152,11 @@ assert.ok(
 assert.ok(allHtml.includes("Your Personal Data Hub"), "homepage must position SynDiary as a personal data hub");
 assert.ok(allHtml.includes("calendar access is used for events you choose to import locally"), "calendar import must be described as available");
 
+// Editorial discussions may mention health apps without claiming SynDiary imports them.
+const productHtml = pageEntries.filter(([file]) => !file.startsWith("news/")).map(([, , html]) => html).join("\n");
+assert.doesNotMatch(productHtml, /health apps/i, "product pages must not claim health-app support");
+
 const forbiddenClaims = [
-  /health apps/i,
   /monetize (?:it|your data)/i,
   /premium (?:upgrade|support)/i,
   /desktop (?:app|release|version)/i,
