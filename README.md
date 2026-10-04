@@ -32,6 +32,32 @@ build, and deployment details.
 - **Runtime:** **Node ≥ 22.12** (`docs/.nvmrc`). The output directory is declared in
   `docs/wrangler.toml` (`pages_build_output_dir`).
 
+## Website analytics
+
+Both sites use the existing Umami service at `https://analytics.openadviser.com`.
+The `syndiary` team has separate website entries:
+
+| Site | Umami name | Website ID | Allowed hostnames |
+| --- | --- | --- | --- |
+| Main site | SynDiary (website) | `2922c55d-87e3-464a-a4a5-9837676a4517` | `syndiary.com`, `www.syndiary.com` |
+| Docs portal | SynDiary (docs) | `2aa8fed9-f1ef-4e2d-b12d-e63b0c47d653` | `docs.syndiary.com` |
+
+The deferred tracker is included in every public `www/` HTML page and in the
+Starlight `head` configuration in `docs/astro.config.mjs`. Website IDs are public
+configuration, not credentials. No analytics package or build secret is needed.
+
+`data-domains` excludes localhost and deployment previews. Both trackers respect
+Do Not Track and remove URL query strings and fragments, including from referrers.
+Only the standard tracker is installed; no recorder, heatmap, user identification,
+or form-content tracking is configured. Public disclosures are in the privacy
+policy and the docs privacy page.
+
+After publishing, visit one page on each production domain with Do Not Track off
+and check that its page view appears in the matching Umami Realtime dashboard.
+Both hostnames must use their own website ID. Publishing `main` deploys the main
+site through Netlify; the docs portal still requires the Direct Upload steps in
+`docs/README.md`.
+
 ## shared/ — design tokens
 
 `shared/brand-tokens.css` holds the canonical SynDiary brand tokens (colors, radii,

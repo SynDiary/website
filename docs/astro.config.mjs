@@ -53,6 +53,19 @@ export default defineConfig({
         { label: 'Release notes', slug: 'release-notes' },
       ],
       head: [
+        // Umami: exclude local/preview traffic and URL query strings/fragments.
+        {
+          tag: 'script',
+          attrs: {
+            defer: true,
+            src: 'https://analytics.openadviser.com/script.js',
+            'data-website-id': '2aa8fed9-f1ef-4e2d-b12d-e63b0c47d653',
+            'data-domains': 'docs.syndiary.com',
+            'data-do-not-track': 'true',
+            'data-exclude-search': 'true',
+            'data-exclude-hash': 'true',
+          },
+        },
         // Light-only: hint native controls before CSS loads (ThemeProvider
         // override also locks data-theme=light synchronously).
         { tag: 'meta', attrs: { name: 'color-scheme', content: 'light' } },
