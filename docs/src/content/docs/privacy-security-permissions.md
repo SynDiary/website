@@ -58,6 +58,12 @@ Nothing is sent automatically. If you choose to send feedback, the app opens you
 
 Analytics is opt-in and off by default. If you turn it on, the app records anonymized usage events such as screens visited and feature counters, never your content. In the current version, these events stay on your device and aren't transmitted anywhere.
 
+## Website analytics
+
+The main website and this documentation portal use Umami at [analytics.openadviser.com](https://analytics.openadviser.com) to measure visits and see which pages are useful. Page views send the page address and title, referrer, browser language, and screen size. URL query strings and fragments are removed from page addresses and referrers before sending. Like any web request, the analytics service receives your IP address and standard request metadata.
+
+This setup uses no analytics cookies, advertising identifiers, session recordings, or heatmaps. It does not collect form contents or data stored in the SynDiary app. Enable Do Not Track in your browser to stop analytics collection. These website measurements are separate from the app's optional on-device analytics described above.
+
 ## Permissions
 
 SynDiary may ask for a few device permissions, each for a local purpose. You can revoke any of them at any time in your device settings.
