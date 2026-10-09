@@ -15,6 +15,7 @@ const requiredPages = new Map([
   ["terms-of-service.html", "https://www.syndiary.com/terms-of-service.html"],
   ["support.html", "https://www.syndiary.com/support"],
   ["news/index.html", "https://www.syndiary.com/news/"],
+  ["news/making-search-more-useful-in-syndiary/index.html", "https://www.syndiary.com/news/making-search-more-useful-in-syndiary/"],
   ["news/we-can-download-our-data-but-can-we-actually-use-it/index.html", "https://www.syndiary.com/news/we-can-download-our-data-but-can-we-actually-use-it/"],
   ["news/welcome-to-syndiary-news/index.html", "https://www.syndiary.com/news/welcome-to-syndiary-news/"],
 ]);
