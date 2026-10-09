@@ -32,3 +32,6 @@ docs/.astro/
 pinegrow.json
 _pgbackup/
 _pginfo/
+
+# Local Netlify folder
+.netlify
