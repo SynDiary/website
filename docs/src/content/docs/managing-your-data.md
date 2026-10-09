@@ -11,7 +11,7 @@ Everything you put into SynDiary, and everything you bring into it, stays under 
 
 All imports are processed entirely on your device. Bringing in an archive or a calendar never sends your content to a server on SynDiary's side.
 
-**Instagram and Facebook archives.** Meta lets you download a full export of your account as a ZIP file. [Download your Facebook & Instagram information](/managing-your-data/download-facebook-instagram/) walks through requesting that export from Meta Accounts Center and choosing the right format. Direct in-app import of that ZIP is on its way. For now, keep the file somewhere safe until it's available.
+**Instagram and Facebook archives.** Meta lets you download a full export of your account as a ZIP file. [Download your Facebook & Instagram information](/managing-your-data/download-facebook-instagram/) walks through requesting that export from Meta Accounts Center and choosing the right format. Once you have the ZIP, open **Settings → Import your memories** in SynDiary, choose Facebook or Instagram, and select the file.
 
 **Device calendar.** SynDiary can read events from your device's calendar and bring them into your timeline, using the calendar permission. This import happens locally, and your events aren't sent anywhere.
 

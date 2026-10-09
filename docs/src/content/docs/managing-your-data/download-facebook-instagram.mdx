@@ -1,6 +1,6 @@
 ---
 title: Download your Facebook & Instagram information
-description: Step-by-step guide to exporting your Facebook and Instagram data from Meta Accounts Center, ready for SynDiary.
+description: Step-by-step guide to exporting your Facebook and Instagram data from Meta Accounts Center and importing the ZIP into SynDiary.
 status: in-review
 platforms: [ios, android]
 ---
@@ -12,19 +12,13 @@ import downloadAndSelect from '../../../assets/meta-guide/download-and-select-pr
 import { Image } from 'astro:assets';
 
 You'll use **Meta Accounts Center** to request a download of your information, save
-the ZIP file to your device, and keep it ready for SynDiary. **SynDiary never needs
+the ZIP file to your device, and import it into SynDiary. **SynDiary never needs
 your Facebook or Instagram password.**
 
 :::caution[Only use Meta's official download process]
 Don't give your Facebook or Instagram password to third-party tools. Keep the
 downloaded ZIP in a secure place, and delete it when you no longer need it. It can
 contain photos, videos, messages, comments, and profile details.
-:::
-
-:::note[Exporting now, importing soon]
-This guide covers **exporting your data from Meta**, which you can do today. Direct
-import into SynDiary is being added. For now, follow the steps below and keep your
-ZIP file somewhere safe until the in-app import is available.
 :::
 
 ## Before you start
@@ -87,7 +81,7 @@ Center and you want one request that includes both.
 
 9. **Download the ZIP when it's ready.** When Meta notifies you, return to *Download your information* and tap **Download**. Save the ZIP somewhere you can find it, such as Downloads or Files. (Meta may ask you to enter your password before the download starts, and prepared files stay available for a limited number of days.)
 
-10. **Keep the ZIP ready for SynDiary.** Store the file somewhere safe. When the Facebook/Instagram import option is available in the app, you'll select this ZIP.
+10. **Import the ZIP into SynDiary.** Follow [Import the ZIP into SynDiary](#import-the-zip-into-syndiary) below.
 
 </Steps>
 
@@ -102,6 +96,7 @@ Center and you want one request that includes both.
 5. Choose **Download to device**.
 6. Use **Date range: All time** and **Format: JSON** for app import (HTML for a readable archive).
 7. Tap **Create files**, wait for the notification, then return and download the ZIP.
+8. Follow [Import the ZIP into SynDiary](#import-the-zip-into-syndiary) below.
 
 </Steps>
 
@@ -116,8 +111,22 @@ Center and you want one request that includes both.
 5. Choose **Download to device**.
 6. Use **Date range: All time** and **Format: JSON** for app import (HTML for a readable archive).
 7. Tap **Create files**, wait for the notification, then return and download the ZIP.
+8. Follow [Import the ZIP into SynDiary](#import-the-zip-into-syndiary) below.
 
 </Steps>
+
+## Import the ZIP into SynDiary
+
+<Steps>
+
+1. In SynDiary, open **Settings** and tap **Import your memories**.
+2. Under **One-time imports**, tap **Facebook** or **Instagram**, matching the archive you downloaded.
+3. Select the ZIP from Meta. Don't unzip it first.
+
+</Steps>
+
+The import runs on your device. Your posts appear in the timeline as social media
+entries, and each import is listed under **Import history** on the same screen.
 
 ## Troubleshooting
 
@@ -129,7 +138,7 @@ Center and you want one request that includes both.
 | The ZIP is too large for my phone. | Use a desktop browser, or free up storage before downloading. |
 | I chose HTML but need JSON. | Request a new download and choose JSON as the format. |
 | I only downloaded one account. | Create a new request and select the missing Facebook or Instagram profile. |
-| I'm not sure the file is right for SynDiary. | Keep the original ZIP from Meta (don't unzip it). When in-app import is available, follow the prompts in SynDiary. They'll tell you exactly what to select. |
+| I'm not sure the file is right for SynDiary. | Keep the original ZIP from Meta (don't unzip it) and select it in SynDiary. The import screen shows how many JSON and HTML files the archive contains. If it's HTML, request a new download in JSON. |
 
 ## Short version
 
@@ -137,4 +146,4 @@ Open Facebook or Instagram → **Accounts Center → Your information and permis
 Download your information → Download or transfer information**. Select Facebook,
 Instagram, or both. Choose **All available information**, **Download to device**,
 **All time**, and **JSON**. Tap **Create files**. When Meta says the file is ready,
-download the ZIP and keep it ready for SynDiary.
+download the ZIP, then import it in SynDiary under **Settings → Import your memories**.

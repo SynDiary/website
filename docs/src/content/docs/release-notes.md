@@ -12,7 +12,7 @@ SynDiary ships regularly through [Google Play](https://play.google.com/apps/test
 The current release centers on the core experience: a timeline built from entries you create yourself, plus data you choose to bring in from calendars and archives. It includes:
 
 - A timeline of entries, including basic, event, person, organization, media, audio, social media, and place entries
-- Bringing in data from device calendars and calendar feeds, and preparing Instagram/Facebook archives for import
+- Bringing in data from device calendars, calendar feeds, and Instagram/Facebook archives
 - On-device AI, with an optional cloud AI path using your own API key
 - Reports built from your entries, viewable as stat cards and charts
 
