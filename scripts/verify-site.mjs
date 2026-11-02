@@ -15,6 +15,7 @@ const requiredPages = new Map([
   ["terms-of-service.html", "https://www.syndiary.com/terms-of-service.html"],
   ["support.html", "https://www.syndiary.com/support"],
   ["news/index.html", "https://www.syndiary.com/news/"],
+  ["news/your-data-stays-with-you-now-your-ai-can-do-more-with-it/index.html", "https://www.syndiary.com/news/your-data-stays-with-you-now-your-ai-can-do-more-with-it/"],
   ["news/your-data-is-everywhere-but-what-can-you-actually-do-with-it/index.html", "https://www.syndiary.com/news/your-data-is-everywhere-but-what-can-you-actually-do-with-it/"],
   ["news/is-your-data-really-private-if-an-app-needs-to-send-it-somewhere-else/index.html", "https://www.syndiary.com/news/is-your-data-really-private-if-an-app-needs-to-send-it-somewhere-else/"],
   ["news/making-search-more-useful-in-syndiary/index.html", "https://www.syndiary.com/news/making-search-more-useful-in-syndiary/"],
