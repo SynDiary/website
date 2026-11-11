@@ -5,7 +5,7 @@ status: in-review
 platforms: [ios, android]
 ---
 
-Everything you put into SynDiary stays on your device. Your data lives in a database that's encrypted at rest by default, there's no account and no registration, and the SynDiary team runs no server that receives your content. The team can't read or recover your data because it never reaches them.
+SynDiary stores your content on your device by default. Your data lives in a database that's encrypted at rest by default, there's no account and no registration, and the SynDiary team runs no server that receives your content. The team can't read or recover your data because it never reaches them.
 
 A short list of clearly marked, optional features can send data off your device. This page walks through each one: what triggers it, what's involved, and how to turn it off.
 
@@ -18,7 +18,7 @@ By default, nothing you write leaves your device. That includes:
 - Photos, audio recordings, and other media you attach.
 - Your settings and preferences.
 
-Imports are processed entirely on your device. That will include the Instagram and Facebook archive import once it ships: it reads the export file you already downloaded and never connects to Instagram or Facebook. See [Managing your data](/managing-your-data/) for what you can bring in today.
+Imports are processed entirely on your device. Instagram and Facebook archive imports read the export file you already downloaded and never connect to Instagram or Facebook. See [Managing your data](/managing-your-data/) for import instructions.
 
 ## What can leave your device, and when
 
@@ -50,6 +50,10 @@ Reports are sent over HTTPS to the SynDiary website service hosted by Netlify. L
 
 On mobile, the app checks at most every six hours whether the installed version is still current, by fetching a small static file from [www.syndiary.com](https://www.syndiary.com). The request carries no identifiers and no cookies, though like any web request it reveals your IP address, and the web host learns that the app launched. It's an anonymous check, not a tracking call.
 
+### Backup files and sharing
+
+Creating a backup writes an unencrypted file outside the app's encrypted storage. **Save to device** lets you choose a location, and **Share** uses your phone's sharing options. If you choose a cloud folder, another app, or a recipient, the export goes to that destination. Check the destination and protect the file before continuing.
+
 ### Feedback
 
 Nothing is sent automatically. If you choose to send feedback, the app opens your email client with an editable diagnostic summary. It reaches the team only after you review it and hit send.
@@ -75,14 +79,14 @@ SynDiary may ask for a few device permissions, each for a local purpose. You can
 
 ## Staying in control
 
-You can edit or delete individual entries whenever you like, and clear all data from Settings in one step. Uninstalling the app removes everything.
+You can edit or delete individual entries, or use **Settings → Back up & Restore → Erase everything**. Save and check a backup first. Erasing app data or uninstalling SynDiary does not delete copies you saved or shared elsewhere.
 
-When you export your data, you can choose an encrypted bundle (ZIP/JSON) or a plain-text export. The plain-text option warns you that the exported copy is unprotected.
+[Backup files](/managing-your-data/back-up-and-restore/) are unencrypted ZIP or JSON exports, even when your on-device storage is encrypted. ZIP backups can include original photos and audio; JSON exports contain references without those files. Read the security notice, protect the export, and keep a copy away from your phone.
 
-If your encrypted storage uses a recovery code, keep it somewhere safe. Without it, that data can't be recovered by anyone, including the SynDiary team.
+If your encrypted storage uses a recovery code, keep it somewhere safe and separate from your phone. It can unlock existing encrypted storage, but cannot replace a missing backup. Recovery codes are not included in exports, and the SynDiary team cannot retrieve your code or a lost backup for you.
 
 :::note
-SynDiary is under active development — details may shift between releases.
+SynDiary is under active development. Details may shift between releases.
 :::
 
 This page explains SynDiary's privacy behavior in plain language. The binding documents are the [Privacy Policy](https://www.syndiary.com/privacy-policy.html) and [Terms of Service](https://www.syndiary.com/terms-of-service.html) on the main site. Questions? Reach the team at [info@syndiary.com](mailto:info@syndiary.com).

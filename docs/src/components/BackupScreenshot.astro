@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption: string;
+  cropHeight: number;
+}
+const { src, alt, caption, cropHeight } = Astro.props;
+---
+
+<figure class="backup-screenshot">
+  <a class="backup-screen" href={src.src} aria-label={`View full screenshot: ${alt}`} style={`aspect-ratio: ${src.width} / ${cropHeight}`}>
+    <Image src={src} alt={alt} width={720} loading="lazy" />
+  </a>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .backup-screenshot {
+    width: 100%;
+    max-width: 26rem;
+    margin: 1.5rem auto;
+  }
+  .backup-screen {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--sd-color-line);
+    border-radius: var(--sd-radius-card);
+    background: #f7f5ec;
+  }
+  .backup-screen :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    margin: -12.7226% 0 0;
+  }
+  figcaption {
+    margin-top: .6rem;
+    font-size: var(--sl-text-xs);
+    line-height: 1.6;
+    color: var(--sd-color-muted);
+  }
+  .backup-screen:focus-visible {
+    outline: 3px solid var(--sd-color-link);
+    outline-offset: 4px;
+  }
+</style>

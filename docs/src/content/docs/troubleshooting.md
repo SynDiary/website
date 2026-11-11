@@ -19,7 +19,20 @@ Most import problems trace back to the Meta export itself, not SynDiary. The [Do
 
 ## Storage and recovery
 
-If your encrypted storage uses a recovery code, that code is the only way back in. If it's lost, the data can't be recovered by anyone, including the SynDiary team, since there's no account or server holding a copy. Keep your recovery code somewhere safe, separate from the device itself.
+A recovery code can unlock existing encrypted storage if the device's key is lost. It cannot recreate files lost with a phone or replace a backup. The SynDiary team does not hold a server copy of your entries, backup, or recovery code.
+
+If you have a saved SynDiary backup, follow [Back up and restore](/managing-your-data/back-up-and-restore/). Keep the backup protected and any recovery code secure, separately from the phone.
+
+## Backup and restore
+
+| Problem | What to check |
+| --- | --- |
+| I saw "Backup ready" but cannot find the file. | That message means the export was prepared. Complete **Save to device** or **Share**, then check the chosen destination. |
+| Photos or audio are missing after restore. | A JSON export contains references, not original files. Use a ZIP created with **Include original media** on. Check export and restore warnings for files that could not be included or restored. |
+| My preferences, API keys, or AI models did not return. | These are not included in backups. Set up preferences and service connections again, and download any models you need. Recovery codes and calendar feed URLs are also excluded. |
+| Restore does not accept my file. | Choose a ZIP or JSON previously exported from SynDiary. A Facebook or Instagram archive belongs in the separate archive import flow. Keep the original backup and include the error message when asking for help. |
+| I lost my phone and my only backup was on it. | Look for a copy you previously saved or shared to another location. A recovery code alone cannot recreate the missing data, and the SynDiary team cannot recover it for you. |
+| Is my backup encrypted? | No. Both ZIP and JSON exports are unencrypted. Protect the file before sharing it or storing it outside the app. |
 
 ## AI issues
 
@@ -38,5 +51,5 @@ Settings includes a send-feedback option that opens your email client with an ed
 You can also reach the team directly through the [contact form](https://www.syndiary.com/#contact).
 
 :::note
-SynDiary is under active development — details may shift between releases.
+SynDiary is under active development. Details may shift between releases.
 :::
