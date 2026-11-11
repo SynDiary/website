@@ -1,0 +1,86 @@
+---
+title: Back up and restore
+description: Save your SynDiary entries and original media, protect your backup file, and restore a saved ZIP or JSON export.
+status: published
+platforms: [ios, android]
+lastVerified: "2026-11-11"
+---
+
+import BackupScreenshot from '../../../components/BackupScreenshot.astro';
+import settings from '../../../assets/backup-guide/syndiary-settings-backup-restore.png';
+import menu from '../../../assets/backup-guide/syndiary-backup-restore-menu.png';
+import backup from '../../../assets/backup-guide/syndiary-backup-include-original-media.png';
+import restore from '../../../assets/backup-guide/syndiary-restore-choose-backup-file.png';
+
+A backup is a separate file containing the data you export from SynDiary. Keep a copy away from your phone so you can restore your entries if the device is lost or replaced, or the app is uninstalled. The SynDiary team does not keep a server copy it can recover for you.
+
+:::caution[Backup files are not encrypted]
+Both ZIP and JSON exports are unencrypted, even when your on-device storage is encrypted. Anyone who opens the file can read its contents. Use a protected location, such as an encrypted drive or file vault, and protect the file before sharing it.
+:::
+
+## Choose what to include
+
+| Backup option | File | Contents |
+| --- | --- | --- |
+| **Include original media** on | ZIP | Your entries, their connections, and the original photos and audio files available in SynDiary. |
+| **Include original media** off | JSON | Your entries and media references, without the original photos or audio files. |
+
+Choose ZIP with original media if you want to restore photos and recordings as well as entries. A JSON export cannot recover missing media from references alone. Review export warnings in case some items or files could not be included.
+
+The backup does not include:
+
+- Passwords, API keys, recovery codes, or calendar feed URLs.
+- Downloaded AI models or their cache.
+- App preferences, such as the theme and onboarding state, or diagnostics data.
+
+Keep any recovery code separately. Be prepared to configure your preferences, reconnect services, and download AI models again on a new device.
+
+## Create and save a backup
+
+### 1. Open Back up
+
+Go to **Settings → Back up & Restore → Back up**.
+
+<BackupScreenshot src={settings} cropHeight={530} alt="SynDiary Settings with Back up & Restore under Your data" caption="Open Back up & Restore in Settings." />
+
+<BackupScreenshot src={menu} cropHeight={800} alt="Back up & Restore menu with Back up and Restore options" caption="Choose Back up to create an export. Restore opens a file you saved earlier." />
+
+### 2. Choose the contents
+
+Leave **Include original media** on to include photos and audio. Turn it off only if you want a smaller, data-only JSON export.
+
+<BackupScreenshot src={backup} cropHeight={2240} alt="Back up screen showing the included data, exclusions, original media switch, and Back up now button" caption="Check what is included before starting. The backup file is not encrypted." />
+
+### 3. Create the file
+
+Tap **Back up now** and read the security notice before continuing. When the export finishes, **Backup ready** shows the exported item summary and file size. Review any warnings about missing information or media.
+
+### 4. Save or share it
+
+Choose **Save to device** to select a location, or **Share** to transfer the file using your phone's sharing options. Complete the save or transfer, then check that the file appears where you intended.
+
+:::note["Backup ready" does not mean the file has been saved]
+It means SynDiary has prepared the export. You still need to save or share it. A copy kept only on the same phone can be lost with the phone.
+:::
+
+Keep another copy in a protected location away from the device. Back up before replacing your phone, uninstalling SynDiary, or erasing its data. Repeat regularly as you add information.
+
+## Restore a saved backup
+
+1. Open **Settings → Back up & Restore → Restore**.
+2. Select **Choose backup file** and choose a ZIP or JSON file previously exported from SynDiary.
+3. Wait for SynDiary to check the file, then review the summary.
+4. Choose **Add to SynDiary** and confirm.
+5. Keep the app open until the restore finishes. Review the results and check that the entries and media you need are available.
+
+<BackupScreenshot src={restore} cropHeight={1150} alt="Restore Data screen with the Choose backup file button" caption="Select a saved SynDiary export. The app shows what is inside before you confirm the restore." />
+
+Restore accepts SynDiary backups. To import a Facebook or Instagram archive, use the separate [archive import guide](/managing-your-data/download-facebook-instagram/).
+
+A JSON-only export does not contain original media. If photos or audio are missing, restore a ZIP backup that includes them or use a separate copy of those files.
+
+## Recovery codes and backup files
+
+A recovery code can unlock existing encrypted storage if the device's key is lost. It does not contain your entries or recreate files lost with a phone. A backup file contains the data you exported, but does not include your recovery code. Keep both securely and separately from your phone if your storage uses a recovery code.
+
+For a missing file, incomplete backup, or restore problem, see [Backup and restore troubleshooting](/troubleshooting/#backup-and-restore).

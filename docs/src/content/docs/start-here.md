@@ -16,7 +16,9 @@ SynDiary is a local-first personal data store: one private place for the data yo
 
 The first time you open SynDiary, a short set of intro slides gives you a quick sense of what the app does. After that, you'll go through storage setup, where SynDiary creates the encrypted database that holds everything you keep in the app.
 
-If your encrypted storage uses a recovery code, storage setup is where you'll get it. Keep it somewhere safe, like a password manager or another secure place you won't lose. Your data is encrypted on your device and never sent anywhere, so that code is the only way back in if you're ever locked out. Without it, nobody can recover that data, not even the SynDiary team.
+If your encrypted storage uses a recovery code, storage setup is where you'll get it. Keep it somewhere safe and separate from your phone. The code can unlock existing encrypted storage if the device's key is lost; it cannot recreate entries lost with the device.
+
+Also [save a backup](/managing-your-data/back-up-and-restore/) from **Settings → Back up & Restore** and keep a copy away from your phone. Backup files are not encrypted and do not include your recovery code. Protect the file before storing or sharing it.
 
 ## Finding your way around
 
@@ -29,7 +31,7 @@ SynDiary's main screen has four tabs along the bottom, with a central button for
 - **Settings:** configure the app, including AI, privacy, and advanced options.
 
 :::note
-SynDiary is under active development — details may shift between releases.
+SynDiary is under active development. Details may shift between releases.
 :::
 
 From here:

@@ -27,14 +27,22 @@ SynDiary stores everything as structured entities based on [schema.org](https://
 
 ## Exporting and backing up
 
-You can export your data as an encrypted ZIP/JSON bundle, a backup that stays protected the way your on-device data is. A plain-text export option is also available for when you need a readable copy. SynDiary warns you when you choose it that the exported copy is no longer protected.
+Open **Settings → Back up & Restore → Back up** to save a copy of your data. With **Include original media** on, SynDiary creates a ZIP containing your entries, their connections, and available original photos and audio. Turning it off creates a smaller JSON export without the original media files.
 
-If your encrypted storage uses a recovery code, keep it somewhere safe, separate from the device itself. Without it, encrypted data can't be recovered by anyone, including the SynDiary team.
+Both formats are unencrypted. Protect the file before storing or sharing it, and keep a copy away from your phone. **Backup ready** means the export is prepared; you still need to save or share it.
+
+See [Back up and restore](/managing-your-data/back-up-and-restore/) for the full procedure, screenshots, backup contents, and exclusions.
+
+## Restoring a backup
+
+Open **Settings → Back up & Restore → Restore**, choose a saved SynDiary ZIP or JSON export, review the summary, then select **Add to SynDiary** and confirm. Keep the app open until it finishes and check the results. A JSON-only export cannot recover missing photos or audio.
+
+A recovery code unlocks existing encrypted storage; it does not replace a saved backup. Recovery codes are not included in exports. Keep yours secure and separate from the phone.
 
 ## Deleting
 
-You can edit or delete individual entries at any time. Settings includes an option to clear all data, if you want to start fresh without removing the app. Uninstalling SynDiary removes everything it stored on your device.
+You can edit or delete individual entries at any time. **Settings → Back up & Restore → Erase everything** removes your entries, photos, and settings. Save and check a backup before using it or uninstalling SynDiary. A backup stored outside the app is a separate copy; protect or delete it separately.
 
 :::note
-SynDiary is under active development — details may shift between releases.
+SynDiary is under active development. Details may shift between releases.
 :::

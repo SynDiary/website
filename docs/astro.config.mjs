@@ -45,6 +45,7 @@ export default defineConfig({
           label: 'Managing your data',
           items: [
             { label: 'Overview', slug: 'managing-your-data' },
+            { label: 'Back up and restore', slug: 'managing-your-data/back-up-and-restore' },
             { label: 'Download Facebook & Instagram data', slug: 'managing-your-data/download-facebook-instagram' },
           ],
         },
