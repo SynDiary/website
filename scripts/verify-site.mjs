@@ -10,6 +10,7 @@ const repositoryRoot = path.resolve(
 );
 const publishDirectory = path.join(repositoryRoot, "www");
 const requiredPages = new Map([
+  ["news/your-facebook-and-instagram-memories-back-in-your-hands/index.html", "https://www.syndiary.com/news/your-facebook-and-instagram-memories-back-in-your-hands/"],
   ["index.html", "https://www.syndiary.com/"],
   ["privacy-policy.html", "https://www.syndiary.com/privacy-policy.html"],
   ["terms-of-service.html", "https://www.syndiary.com/terms-of-service.html"],
