@@ -1,0 +1,38 @@
+.footer-page-links {
+    max-width: 19rem;
+    gap: 0.5rem 1rem;
+}
+
+@media (min-width: 992px) {
+    /* Leave room beside the social links for the fixed back-to-top button. */
+    #site-footer > .container {
+        padding-inline-end: 4rem;
+    }
+
+    .footer-page-links {
+        max-width: none;
+    }
+}
+
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: #fff5f2;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+    color: #fff5f2;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ff9160;
+}
+
+.footer-social-link:focus-visible {
+    outline: 2px solid #ff9160;
+    outline-offset: 3px;
+}
