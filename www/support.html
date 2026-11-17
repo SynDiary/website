@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="vendor/aos/dist/aos.css">
         <!-- Custom Css -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/footer-social.css">
         <!-- Umami: production domains only; respect browser privacy preferences. -->
         <script defer src="https://analytics.openadviser.com/script.js"
             data-website-id="2922c55d-87e3-464a-a4a5-9837676a4517"
@@ -118,19 +119,30 @@
         </div>
 
         <!-- Footer -->
-        <div class="footer-end py-5 bg-dark">
+        <div id="site-footer" class="footer-end py-5 bg-dark">
             <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-auto">
+                <div class="row align-items-center justify-content-lg-between gy-3">
+                    <div class="col-12 col-lg-auto">
                         <p class="text-center m-0 text-white-50">Copyright © <a href="#" class="text-white">SynDiary</a> 2026</p>
                     </div>
-                    <div class="col-auto">
-                        <p class="text-center m-0">
-                            <a href="privacy-policy.html" class="text-white-50 me-3">Privacy Policy</a>
-                            <a href="terms-of-service.html" class="text-white-50 me-3">Terms of Service</a>
+                    <div class="col-12 col-lg-auto">
+                        <p class="footer-page-links d-flex flex-wrap justify-content-center mx-auto mb-0">
+                            <a href="privacy-policy.html" class="text-white-50">Privacy Policy</a>
+                            <a href="terms-of-service.html" class="text-white-50">Terms of Service</a>
                             <a href="support" class="text-white-50">Support</a>
                         </p>
                     </div>
+                    <nav class="col-12 col-lg-auto d-flex justify-content-center gap-2" aria-label="Follow SynDiary">
+                        <a class="footer-social-link" href="https://www.facebook.com/syndiary" aria-label="SynDiary on Facebook">
+                            <svg width="18" height="18" aria-hidden="true"><use href="img/social-icons.svg#facebook"></use></svg>
+                        </a>
+                        <a class="footer-social-link" href="https://www.instagram.com/syndiary_app/" aria-label="SynDiary on Instagram">
+                            <svg width="18" height="18" aria-hidden="true"><use href="img/social-icons.svg#instagram"></use></svg>
+                        </a>
+                        <a class="footer-social-link" href="https://x.com/SynDiary_app" aria-label="SynDiary on X">
+                            <svg width="18" height="18" aria-hidden="true"><use href="img/social-icons.svg#twitter-x"></use></svg>
+                        </a>
+                    </nav>
                 </div>
             </div>
         </div>
