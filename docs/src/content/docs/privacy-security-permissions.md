@@ -34,9 +34,11 @@ Cloud AI stays off until you turn it on. Once it's on, the messages, personal co
 
 If you download an on-device AI model, the app fetches the model files from Hugging Face's content delivery network. This is a standard web download that you start yourself. None of your content is transmitted, only the model files, though the file host, like any website you visit, sees your IP address.
 
-### Calendar feed sync
+### Calendar imports
 
-If you add a Google Calendar feed by URL, the app periodically fetches that feed so your events show up in your timeline. The request goes directly from your device to the calendar host, which sees standard web-request metadata. Importing from your device calendar or from a calendar file is different: those are read locally, with no network access.
+Calendar file imports read the export you select locally, without uploading it to a SynDiary server. See [Import a calendar](/managing-your-data/import-calendar/) for the available workflow.
+
+Live Google Calendar feeds and direct device-calendar importing are coming in the next release and remain disabled in the current version. A Google Calendar feed fetch will contact the calendar host directly from your device; that host can see standard web-request metadata. This differs from reading a local export file.
 
 ### AI assistant response reports
 
@@ -73,7 +75,7 @@ This setup uses no analytics cookies, advertising identifiers, session recording
 SynDiary may ask for a few device permissions, each for a local purpose. You can revoke any of them at any time in your device settings.
 
 - **Microphone:** for recording voice notes; transcription happens on device by default.
-- **Calendar:** to bring your device calendar events into your timeline, locally.
+- **Calendar:** for access to device calendars. Permission and calendar selection may be available, but direct device-calendar importing remains disabled until the next release. Calendar file import does not need this permission.
 - **Photos / files:** to attach media and to read archive files you import, locally.
 - **Notifications** (if offered): scheduled on the device.
 

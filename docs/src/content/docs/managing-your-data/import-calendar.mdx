@@ -1,0 +1,98 @@
+---
+title: Import a calendar
+description: Import an ICS calendar file into SynDiary, choose a date range, update an earlier import, and make an editable personal copy of an event.
+status: in-review
+platforms: [ios, android]
+lastVerified: "2026-11-21"
+---
+
+import CalendarScreenshot from '../../../components/CalendarScreenshot.astro';
+import configuration from '../../../assets/calendar-guide/syndiary-calendar-configuration.png';
+import result from '../../../assets/calendar-guide/syndiary-calendar-result.png';
+import event from '../../../assets/calendar-guide/syndiary-calendar-event.png';
+
+Bring events from an exported calendar into your SynDiary timeline. File imports run on your device and do not change the calendar you exported.
+
+:::note[Available now and coming next]
+Calendar file import is available now. Live Google Calendar feeds and direct device-calendar importing are coming in the next release. Their controls may appear in the current app, but importing and refreshing through those routes remain disabled. Use **Calendar file** for this guide.
+:::
+
+## Prepare your file
+
+SynDiary accepts `.ics` and `.ical` calendar files and supported ZIP archives containing them.
+
+- **Google Calendar:** on a computer, find your calendar under **My calendars**, open its menu, choose **Settings and sharing**, then **Export calendar**. To export calendars together as a ZIP, use **Settings → Import & export → Export**. Google's mobile Calendar app cannot export calendars. Work or school accounts may restrict exports. See [Google's export instructions](https://support.google.com/calendar/answer/37111?hl=en).
+- **Apple Calendar on Mac:** export an individual calendar as an `.ics` file. Use a calendar file, not an Apple Calendar backup archive. See [Apple's export guide](https://support.apple.com/en-am/guide/calendar/icl1023/mac).
+
+Save or transfer the export to a location you can open through your phone's file picker. Keep the original file until you have checked the imported events.
+
+## Import the calendar
+
+1. Open **Settings → Import your memories**.
+2. Under **One-time imports**, choose **Calendar**.
+3. Select **Calendar file**, tap **Choose File**, and select your export.
+4. Under **Import lineage**, choose **Create a new calendar** for your first import from this calendar.
+5. Enter a **Calendar name** you will recognize, such as `Photography work`. This names the import in SynDiary; it does not create a calendar in your calendar provider.
+6. Set **From** and **To** to the period you want. The default starts one year ago and ends one year ahead. Change it to include older events.
+7. Leave **Include recurring events** on if you want repeated events expanded within the selected range.
+8. Tap **Start Import**. If a ZIP contains several calendars, choose the one you want when prompted.
+9. When it finishes, check **Result Summary** and any warnings, then inspect familiar events in your timeline.
+
+<CalendarScreenshot src={configuration} cropTop={489} cropHeight={2280} alt="Calendar file import settings with Photography work selected, the date range and Start Import" caption="Name the calendar and review the dates before starting. This example uses synthetic photography events." />
+
+<CalendarScreenshot src={result} cropTop={1110} cropHeight={890} alt="Calendar Result Summary showing Completed with warnings, three imported and zero failed" caption="This example imported three events with zero failures. The app also reports Completed with warnings; review the result rather than relying only on the progress indicator." />
+
+:::caution[Check the dates and result]
+SynDiary can only import events present in the export, within your selected range and the importer's limits. The age of a calendar account does not guarantee that its export contains all past events. A completion with warnings does not mean every event came across.
+:::
+
+## Update a calendar you imported before
+
+A file import does not automatically receive later calendar changes. Export the same source calendar again when you want to update it.
+
+1. Return to **Calendar Import** and select the newer file.
+2. Under **Import lineage**, choose **Update an imported calendar**.
+3. Select the matching calendar in **Imported calendar**. An update keeps its saved name.
+4. Review the date range and recurring-event setting, then tap **Start Import**.
+5. Check the result and warnings.
+
+SynDiary can add new events and apply supported changes to existing calendar-managed events. Choosing **Create a new calendar** starts a separate import, even when event identifiers match. Use it only when you want that separate copy.
+
+An event absent from a later file is retained in SynDiary. A file import does not treat absence as permission to delete it. Updates also preserve protections for hidden and detached events.
+
+## Add your own description
+
+Calendar-managed events protect their imported values. To create an editable personal copy:
+
+1. Open the imported event from your timeline.
+2. Choose **Detach as my own**.
+3. Read the confirmation and confirm the detachment.
+4. SynDiary creates your personal copy and hides the calendar-managed original. Open **Edit** from the copy's actions to change its description or other editable fields, then choose **Save** or **Update Event**.
+
+<CalendarScreenshot src={event} alt="Portfolio review event with the Detach as my own action and imported description" caption="Detach as my own creates an editable personal copy and hides the calendar-managed original." />
+
+Later calendar imports do not update the personal copy as a calendar-managed event. Your changes do not write back to Google Calendar, Apple Calendar or the exported file.
+
+## Hide or restore an imported event
+
+When the removal flow offers **Hide from SynDiary**, use it to take a calendar-managed event out of view. Hiding retains its data; it is not permanent erasure.
+
+To restore a hidden item, open **Settings → Import your memories → Hidden items** and use **Unhide** for the item. Restoring visibility does not edit the original calendar.
+
+## If something does not import
+
+| What you see | What to check |
+| --- | --- |
+| Older events are missing | Confirm that the export contains them, then check **From** and **To**. The default only starts one year back. |
+| Repeated events are missing | Check **Include recurring events** and your date range. Read any recurrence warnings. |
+| Recurring events could not be fully expanded | Review the recurrence rules, time zone and date range. SynDiary refuses the import when it cannot complete that expansion. |
+| The file cannot be read | Choose a valid `.ics` or `.ical` export, or a supported ZIP containing one. Re-export a damaged or incomplete file. |
+| The archive is encrypted, unsupported or too large | Use an unencrypted standard ZIP or an individual calendar file. File-size and archive-safety limits still apply. |
+| The import completed with warnings | Read the warnings and check the affected events before assuming the calendar is complete. |
+| Google ICS feed or Device calendars reports that importing is unavailable | Those import routes are not enabled in the current version. Use **Calendar file** until the next release. |
+
+## Privacy and backups
+
+Calendar file imports are processed on your device. They require no SynDiary account and do not upload the file to a SynDiary server. Optional cloud AI, sharing, exports and operating-system backups are separate choices that can move data off the device.
+
+See [Privacy, security & permissions](/privacy-security-permissions/) for those choices and [Back up and restore](/managing-your-data/back-up-and-restore/) to keep a separate copy of your SynDiary data.

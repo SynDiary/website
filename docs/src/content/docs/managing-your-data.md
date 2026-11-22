@@ -13,9 +13,9 @@ All imports are processed entirely on your device. Bringing in an archive or a c
 
 **Instagram and Facebook archives.** Meta lets you download a full export of your account as a ZIP file. [Download your Facebook & Instagram information](/managing-your-data/download-facebook-instagram/) walks through requesting that export from Meta Accounts Center and choosing the right format. Once you have the ZIP, open **Settings → Import your memories** in SynDiary, choose Facebook or Instagram, and select the file.
 
-**Device calendar.** SynDiary can read events from your device's calendar and bring them into your timeline, using the calendar permission. This import happens locally, and your events aren't sent anywhere.
+**Calendar files.** Import a supported `.ics`, `.ical` or calendar ZIP export into your timeline. Choose a date range and either create a separate imported calendar or update one you imported before. See [Import a calendar](/managing-your-data/import-calendar/) for the steps, screenshots and limits.
 
-**Calendar feed by URL.** If you add a calendar feed (for example, a Google Calendar feed URL), SynDiary fetches that feed to keep events in sync. This is the one calendar option that goes online: it periodically checks the feed you've added instead of reading it once from the device.
+**Coming in the next release.** Live Google Calendar feeds and direct device-calendar importing will add ways to bring events into SynDiary. These import routes are not enabled in the current version, even if their controls appear in the app.
 
 **Photos and audio.** Attaching a photo or a voice recording to an entry uses your device's photos/files or microphone permission. These attachments stay local to the entry you create them on.
 
