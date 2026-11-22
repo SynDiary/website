@@ -10,6 +10,7 @@ const repositoryRoot = path.resolve(
 );
 const publishDirectory = path.join(repositoryRoot, "www");
 const requiredPages = new Map([
+  ["news/your-calendar-already-holds-part-of-your-story/index.html", "https://www.syndiary.com/news/your-calendar-already-holds-part-of-your-story/"],
   ["news/your-content-tells-your-story-give-it-a-place-of-your-own/index.html", "https://www.syndiary.com/news/your-content-tells-your-story-give-it-a-place-of-your-own/"],
   ["news/your-facebook-and-instagram-memories-back-in-your-hands/index.html", "https://www.syndiary.com/news/your-facebook-and-instagram-memories-back-in-your-hands/"],
   ["index.html", "https://www.syndiary.com/"],

@@ -1,0 +1,15 @@
+.calendar-hero-shot { height: auto; width: 100%; max-width: 100%; display: block; margin: auto; object-fit: contain; border-radius: 1.25rem; box-shadow: 0 12px 36px #17212618; }
+.calendar-shot { max-width: 25rem; margin: 2rem auto 2.5rem; }
+.calendar-shot a { display: block; border: 1px solid #e2e4df; border-radius: 1.2rem; overflow: hidden; background: #f7f5ec; }
+.calendar-shot img { display: block; width: 100%; height: auto; margin: 0; }
+.calendar-shot figcaption { margin-top: .75rem; color: #626b70; font-size: .875rem; line-height: 1.6; }
+.calendar-shot a:focus-visible { outline: 3px solid #f14f00; outline-offset: 4px; }
+.calendar-guide-link { padding: 1.5rem; border-radius: 1rem; background: #f7f5ec; margin-top: 2rem; }
+.calendar-guide-link h2 { margin-top: 0; }
+.calendar-guide-link p { margin-bottom: 0; }
+
+/* Focus the display on the relevant controls; links retain the full original captures. */
+.calendar-shot--configuration a { aspect-ratio: 1320 / 2280; }
+.calendar-shot--configuration img { margin-top: -37.04545%; }
+.calendar-shot--result a { aspect-ratio: 1320 / 890; }
+.calendar-shot--result img { margin-top: -84.09091%; }
